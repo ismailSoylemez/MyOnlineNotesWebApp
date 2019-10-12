@@ -6,9 +6,17 @@ using System.Text;
 
 namespace MyOnlineNotesEntities
 {
-    [Table("Tables")]
+    [Table("Notes")]
     public class Note : MyEntityBase
     {
+
+        public Note()
+        {
+            Comments = new List<Comment>();
+            Likes = new List<Liked>();
+        }
+
+
 
         [Required, StringLength(60)]
         public string Title { get; set; }

@@ -13,3 +13,5 @@ C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\ob
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\obj\Debug\MyOnlineNotes.DataAccessLayer.csproj.CopyComplete
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\obj\Debug\MyOnlineNotes.DataAccessLayer.dll
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\obj\Debug\MyOnlineNotes.DataAccessLayer.pdb
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\FakeData.dll
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\FakeData.pdb

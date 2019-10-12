@@ -9,6 +9,13 @@ namespace MyOnlineNotes.DataAccessLayer
 {
     public class DatabaseContext :DbContext
     {
+
+        //örnek dataları basıyoruz
+        public DatabaseContext()
+        {
+            Database.SetInitializer(new MyInitializer());
+        }
+
         //diğer projelerdeki classlara erişmek için References ' a entities dll eklemek gerekiyor
         public DbSet<OnlineNoteUser> OnlineNoteUser { get; set; }
         public DbSet<Note> Notes { get; set; }

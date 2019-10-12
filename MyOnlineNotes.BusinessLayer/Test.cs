@@ -11,7 +11,7 @@ namespace MyOnlineNotes.BusinessLayer
         public Test()
         {
             DataAccessLayer.DatabaseContext db = new DataAccessLayer.DatabaseContext();
-            db.Database.CreateIfNotExists();
+            db.Categories.ToList();//örnek dataların oluşması için tabloya seed atmamız gerekiyor..
         }
 
     }

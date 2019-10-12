@@ -149,3 +149,5 @@ C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotesWebApp\bin\MyOnline
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotesWebApp\bin\MyOnlineNotes.DataAccessLayer.pdb
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotesWebApp\bin\MyOnlineNotes.DataAccessLayer.dll.config
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotesWebApp\obj\Debug\MyOnlineNotesWebApp.csprojAssemblyReference.cache
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotesWebApp\bin\FakeData.dll
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotesWebApp\bin\FakeData.pdb

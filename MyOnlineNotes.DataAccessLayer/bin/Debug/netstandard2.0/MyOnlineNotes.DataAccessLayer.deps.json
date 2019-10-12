@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "cfe1dc2a80602aef150a12815387068463a61a0d"
+    "signature": "bf2d91226be8ac41d5c394853ed3b27983a2b190"
   },
   "compilationOptions": {},
   "targets": {
@@ -9,16 +9,24 @@
     ".NETStandard,Version=v2.0/": {
       "MyOnlineNotes.DataAccessLayer/1.0.0": {
         "dependencies": {
+          "EntityFramework": "6.3.0",
+          "MyOnlineNotesEntities": "1.0.0",
           "NETStandard.Library": "2.0.3"
         },
         "runtime": {
           "MyOnlineNotes.DataAccessLayer.dll": {}
         }
       },
+      "EntityFramework/6.3.0": {},
       "Microsoft.NETCore.Platforms/1.1.0": {},
       "NETStandard.Library/2.0.3": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "MyOnlineNotesEntities/1.0.0": {
+        "runtime": {
+          "MyOnlineNotesEntities.dll": {}
         }
       }
     }
@@ -28,6 +36,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "EntityFramework/6.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mEvhoXscTyLFMcnbLzKlbWdx6N8fCY2IMe4drjUTMFqOqI4KThnTPXr1m50oXDJAn5PvCy2e90IcwN/OxkJUjg==",
+      "path": "entityframework/6.3.0",
+      "hashPath": "entityframework.6.3.0.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
@@ -42,6 +57,11 @@
       "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "MyOnlineNotesEntities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

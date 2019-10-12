@@ -1,0 +1,9 @@
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\netstandard2.0\MyOnlineNotes.DataAccessLayer.deps.json
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\netstandard2.0\MyOnlineNotes.DataAccessLayer.dll
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\netstandard2.0\MyOnlineNotes.DataAccessLayer.pdb
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\obj\Debug\netstandard2.0\MyOnlineNotes.DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\obj\Debug\netstandard2.0\MyOnlineNotes.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\obj\Debug\netstandard2.0\MyOnlineNotes.DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\obj\Debug\netstandard2.0\MyOnlineNotes.DataAccessLayer.AssemblyInfo.cs
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\obj\Debug\netstandard2.0\MyOnlineNotes.DataAccessLayer.dll
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\obj\Debug\netstandard2.0\MyOnlineNotes.DataAccessLayer.pdb

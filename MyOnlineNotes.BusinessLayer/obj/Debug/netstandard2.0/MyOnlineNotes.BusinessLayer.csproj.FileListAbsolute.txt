@@ -1,0 +1,9 @@
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\netstandard2.0\MyOnlineNotes.BusinessLayer.deps.json
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\netstandard2.0\MyOnlineNotes.BusinessLayer.dll
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\netstandard2.0\MyOnlineNotes.BusinessLayer.pdb
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\obj\Debug\netstandard2.0\MyOnlineNotes.BusinessLayer.csprojAssemblyReference.cache
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\obj\Debug\netstandard2.0\MyOnlineNotes.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\obj\Debug\netstandard2.0\MyOnlineNotes.BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\obj\Debug\netstandard2.0\MyOnlineNotes.BusinessLayer.AssemblyInfo.cs
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\obj\Debug\netstandard2.0\MyOnlineNotes.BusinessLayer.dll
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\obj\Debug\netstandard2.0\MyOnlineNotes.BusinessLayer.pdb

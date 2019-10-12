@@ -1,0 +1,4 @@
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotesEntities\obj\Debug\netstandard2.0\MyOnlineNotesEntities.csprojAssemblyReference.cache
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotesEntities\obj\Debug\netstandard2.0\MyOnlineNotesEntities.csproj.CoreCompileInputs.cache
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotesEntities\obj\Debug\netstandard2.0\MyOnlineNotesEntities.AssemblyInfoInputs.cache
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotesEntities\obj\Debug\netstandard2.0\MyOnlineNotesEntities.AssemblyInfo.cs

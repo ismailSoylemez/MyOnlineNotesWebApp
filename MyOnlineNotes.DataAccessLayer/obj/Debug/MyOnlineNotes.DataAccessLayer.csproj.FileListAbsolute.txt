@@ -1,0 +1,15 @@
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\obj\Debug\MyOnlineNotes.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\MyOnlineNotes.DataAccessLayer.dll.config
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\MyOnlineNotes.DataAccessLayer.dll
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\MyOnlineNotes.DataAccessLayer.pdb
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\MyOnlineNotesEntities.dll
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\MyOnlineNotesEntities.pdb
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\MyOnlineNotesEntities.dll.config
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\obj\Debug\MyOnlineNotes.DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\obj\Debug\MyOnlineNotes.DataAccessLayer.csproj.CopyComplete
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\obj\Debug\MyOnlineNotes.DataAccessLayer.dll
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\obj\Debug\MyOnlineNotes.DataAccessLayer.pdb

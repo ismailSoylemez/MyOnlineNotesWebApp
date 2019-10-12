@@ -195,12 +195,12 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\MyOnlineNotes.BusinessLayer.csproj">
-      <Project>{141a0e40-200d-4a8e-bcd9-932a44bd0558}</Project>
+    <ProjectReference Include="..\MyOnlineNotes.BusinessLayer\MyOnlineNotes.BusinessLayer.csproj">
+      <Project>{5e7fdcae-b386-4a58-8eb0-013a4358dc99}</Project>
       <Name>MyOnlineNotes.BusinessLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MyOnlineNotesEntitie\MyOnlineNotesEntities.csproj">
-      <Project>{89d5b703-9ccd-41ce-898c-c7924e80d664}</Project>
+    <ProjectReference Include="..\MyOnlineNotesEntities\MyOnlineNotesEntities.csproj">
+      <Project>{840610ab-92be-410f-94bd-01b91803ef08}</Project>
       <Name>MyOnlineNotesEntities</Name>
     </ProjectReference>
   </ItemGroup>

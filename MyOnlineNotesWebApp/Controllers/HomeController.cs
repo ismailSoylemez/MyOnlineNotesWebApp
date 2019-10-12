@@ -8,10 +8,11 @@ namespace MyOnlineNotesWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
+        
+
         public ActionResult Index()
         {
-
+            MyOnlineNotes.BusinessLayer.Test test = new MyOnlineNotes.BusinessLayer.Test();
 
             return View();
         }

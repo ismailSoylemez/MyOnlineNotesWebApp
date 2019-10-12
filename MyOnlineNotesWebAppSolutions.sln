@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyOnlineNotesWebApp", "MyOnlineNotesWebApp\MyOnlineNotesWebApp.csproj", "{B9EAFB1C-772A-473D-A575-99AE5AAAA900}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyOnlineNotes.BusinessLayer", "ClassLibrary1\MyOnlineNotes.BusinessLayer.csproj", "{141A0E40-200D-4A8E-BCD9-932A44BD0558}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyOnlineNotes.DataAccessLayer", "MyOnlineNotes.DataAccessLayer\MyOnlineNotes.DataAccessLayer.csproj", "{21A9C8A0-9585-444B-8C61-D9E822E5489D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyOnlineNotes.DataAccessLayer", "MyOnlineNotes.DataAccessLaye\MyOnlineNotes.DataAccessLayer.csproj", "{64B17210-396F-4419-A38D-550DDFB64206}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyOnlineNotesEntities", "MyOnlineNotesEntities\MyOnlineNotesEntities.csproj", "{840610AB-92BE-410F-94BD-01B91803EF08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyOnlineNotesEntities", "MyOnlineNotesEntitie\MyOnlineNotesEntities.csproj", "{89D5B703-9CCD-41CE-898C-C7924E80D664}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyOnlineNotes.BusinessLayer", "MyOnlineNotes.BusinessLayer\MyOnlineNotes.BusinessLayer.csproj", "{5E7FDCAE-B386-4A58-8EB0-013A4358DC99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +21,18 @@ Global
 		{B9EAFB1C-772A-473D-A575-99AE5AAAA900}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9EAFB1C-772A-473D-A575-99AE5AAAA900}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9EAFB1C-772A-473D-A575-99AE5AAAA900}.Release|Any CPU.Build.0 = Release|Any CPU
-		{141A0E40-200D-4A8E-BCD9-932A44BD0558}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{141A0E40-200D-4A8E-BCD9-932A44BD0558}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{141A0E40-200D-4A8E-BCD9-932A44BD0558}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{141A0E40-200D-4A8E-BCD9-932A44BD0558}.Release|Any CPU.Build.0 = Release|Any CPU
-		{64B17210-396F-4419-A38D-550DDFB64206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{64B17210-396F-4419-A38D-550DDFB64206}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{64B17210-396F-4419-A38D-550DDFB64206}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{64B17210-396F-4419-A38D-550DDFB64206}.Release|Any CPU.Build.0 = Release|Any CPU
-		{89D5B703-9CCD-41CE-898C-C7924E80D664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89D5B703-9CCD-41CE-898C-C7924E80D664}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{89D5B703-9CCD-41CE-898C-C7924E80D664}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{89D5B703-9CCD-41CE-898C-C7924E80D664}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21A9C8A0-9585-444B-8C61-D9E822E5489D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21A9C8A0-9585-444B-8C61-D9E822E5489D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21A9C8A0-9585-444B-8C61-D9E822E5489D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21A9C8A0-9585-444B-8C61-D9E822E5489D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{840610AB-92BE-410F-94BD-01B91803EF08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{840610AB-92BE-410F-94BD-01B91803EF08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{840610AB-92BE-410F-94BD-01B91803EF08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{840610AB-92BE-410F-94BD-01B91803EF08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E7FDCAE-B386-4A58-8EB0-013A4358DC99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E7FDCAE-B386-4A58-8EB0-013A4358DC99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E7FDCAE-B386-4A58-8EB0-013A4358DC99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E7FDCAE-B386-4A58-8EB0-013A4358DC99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

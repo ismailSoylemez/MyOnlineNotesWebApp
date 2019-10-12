@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ismail\\Desktop\\MyOnlineNotesWebAppSolutions\\MyOnlineNotesEntities\\MyOnlineNotesEntities.csproj": {}
+    "C:\\Users\\ismail\\Desktop\\Git\\MyOnlineNotesWebApp\\MyOnlineNotesEntities\\MyOnlineNotesEntities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ismail\\Desktop\\MyOnlineNotesWebAppSolutions\\MyOnlineNotesEntities\\MyOnlineNotesEntities.csproj": {
+    "C:\\Users\\ismail\\Desktop\\Git\\MyOnlineNotesWebApp\\MyOnlineNotesEntities\\MyOnlineNotesEntities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ismail\\Desktop\\MyOnlineNotesWebAppSolutions\\MyOnlineNotesEntities\\MyOnlineNotesEntities.csproj",
+        "projectUniqueName": "C:\\Users\\ismail\\Desktop\\Git\\MyOnlineNotesWebApp\\MyOnlineNotesEntities\\MyOnlineNotesEntities.csproj",
         "projectName": "MyOnlineNotesEntities",
-        "projectPath": "C:\\Users\\ismail\\Desktop\\MyOnlineNotesWebAppSolutions\\MyOnlineNotesEntities\\MyOnlineNotesEntities.csproj",
+        "projectPath": "C:\\Users\\ismail\\Desktop\\Git\\MyOnlineNotesWebApp\\MyOnlineNotesEntities\\MyOnlineNotesEntities.csproj",
         "packagesPath": "C:\\Users\\ismail\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ismail\\Desktop\\MyOnlineNotesWebAppSolutions\\MyOnlineNotesEntities\\obj\\",
+        "outputPath": "C:\\Users\\ismail\\Desktop\\Git\\MyOnlineNotesWebApp\\MyOnlineNotesEntities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

@@ -186,11 +186,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ismail\\Desktop\\MyOnlineNotesWebAppSolutions\\MyOnlineNotes.DataAccessLayer\\MyOnlineNotes.DataAccessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\ismail\\Desktop\\Git\\MyOnlineNotesWebApp\\MyOnlineNotes.DataAccessLayer\\MyOnlineNotes.DataAccessLayer.csproj",
       "projectName": "MyOnlineNotes.DataAccessLayer",
-      "projectPath": "C:\\Users\\ismail\\Desktop\\MyOnlineNotesWebAppSolutions\\MyOnlineNotes.DataAccessLayer\\MyOnlineNotes.DataAccessLayer.csproj",
+      "projectPath": "C:\\Users\\ismail\\Desktop\\Git\\MyOnlineNotesWebApp\\MyOnlineNotes.DataAccessLayer\\MyOnlineNotes.DataAccessLayer.csproj",
       "packagesPath": "C:\\Users\\ismail\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ismail\\Desktop\\MyOnlineNotesWebAppSolutions\\MyOnlineNotes.DataAccessLayer\\obj\\",
+      "outputPath": "C:\\Users\\ismail\\Desktop\\Git\\MyOnlineNotesWebApp\\MyOnlineNotes.DataAccessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ismail\\Desktop\\MyOnlineNotesWebAppSolutions\\MyOnlineNotes.BusinessLayer\\MyOnlineNotes.BusinessLayer.csproj": {}
+    "C:\\Users\\ismail\\Desktop\\Git\\MyOnlineNotesWebApp\\MyOnlineNotes.BusinessLayer\\MyOnlineNotes.BusinessLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ismail\\Desktop\\MyOnlineNotesWebAppSolutions\\MyOnlineNotes.BusinessLayer\\MyOnlineNotes.BusinessLayer.csproj": {
+    "C:\\Users\\ismail\\Desktop\\Git\\MyOnlineNotesWebApp\\MyOnlineNotes.BusinessLayer\\MyOnlineNotes.BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ismail\\Desktop\\MyOnlineNotesWebAppSolutions\\MyOnlineNotes.BusinessLayer\\MyOnlineNotes.BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\ismail\\Desktop\\Git\\MyOnlineNotesWebApp\\MyOnlineNotes.BusinessLayer\\MyOnlineNotes.BusinessLayer.csproj",
         "projectName": "MyOnlineNotes.BusinessLayer",
-        "projectPath": "C:\\Users\\ismail\\Desktop\\MyOnlineNotesWebAppSolutions\\MyOnlineNotes.BusinessLayer\\MyOnlineNotes.BusinessLayer.csproj",
+        "projectPath": "C:\\Users\\ismail\\Desktop\\Git\\MyOnlineNotesWebApp\\MyOnlineNotes.BusinessLayer\\MyOnlineNotes.BusinessLayer.csproj",
         "packagesPath": "C:\\Users\\ismail\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ismail\\Desktop\\MyOnlineNotesWebAppSolutions\\MyOnlineNotes.BusinessLayer\\obj\\",
+        "outputPath": "C:\\Users\\ismail\\Desktop\\Git\\MyOnlineNotesWebApp\\MyOnlineNotes.BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

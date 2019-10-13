@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using MyOnlineNotes.DataAccessLayer;
 using System.Data.Entity;
 using System.Linq.Expressions;
+using MyOnlineNotes.DataAccessLayer.Abstract;
+using Nest;
 
 namespace MyOnlineNotes.DataAccessLayer.EntityFramework
 {
@@ -15,7 +17,7 @@ namespace MyOnlineNotes.DataAccessLayer.EntityFramework
     //T class olmak zorundadır..
     //tüm classlar için ayrı fonk. yerine generic tanımladık
 
-    public class Repository<T> : RepositoryBase where T : class
+    public class Repository<T> : RepositoryBase, IRepository where T : class
     {
 
         //RepositoryBase sınıfından miras aldığım için o class içinde dbcontext oluşuyor.Buradaki dbler hata vermeyecek çünkü miras alınan sınıftaki db yi kullanıyorlar

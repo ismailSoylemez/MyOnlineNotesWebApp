@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace MyOnlineNotesWebApp.Controllers
 {
     public class HomeController : Controller
@@ -15,6 +16,9 @@ namespace MyOnlineNotesWebApp.Controllers
             
 
             MyOnlineNotes.BusinessLayer.Test test = new MyOnlineNotes.BusinessLayer.Test();
+            //test.InsertTest();
+            //test.UpdateTest();
+            test.DeleteTest();
 
             return View();
         }

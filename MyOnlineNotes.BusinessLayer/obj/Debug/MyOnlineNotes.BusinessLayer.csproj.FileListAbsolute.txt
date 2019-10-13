@@ -18,3 +18,5 @@ C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\obj\
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\obj\Debug\MyOnlineNotes.BusinessLayer.pdb
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\FakeData.dll
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\FakeData.pdb
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\EPPlus.dll
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\EPPlus.xml

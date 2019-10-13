@@ -18,7 +18,9 @@ namespace MyOnlineNotesWebApp.Controllers
             MyOnlineNotes.BusinessLayer.Test test = new MyOnlineNotes.BusinessLayer.Test();
             //test.InsertTest();
             //test.UpdateTest();
-            test.DeleteTest();
+            //test.DeleteTest();
+
+            test.CommentTest();
 
             return View();
         }

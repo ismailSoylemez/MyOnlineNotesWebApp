@@ -64,7 +64,7 @@ namespace MyOnlineNotes.BusinessLayer
         }
 
         //save methodu
-        public int Save()
+        private int Save()
         {
             return db.SaveChanges();
         }

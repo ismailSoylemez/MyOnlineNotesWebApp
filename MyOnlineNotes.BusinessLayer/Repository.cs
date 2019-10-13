@@ -11,14 +11,17 @@ using System.Linq.Expressions;
 
 namespace MyOnlineNotes.BusinessLayer
 {
+
+
     //T class olmak zorundadır..
     //tüm classlar için ayrı fonk. yerine generic tanımladık
 
-    public class Repository<T> where T : class
+    public class Repository<T> : RepositoryBase where T : class
     {
 
-        private DatabaseContext db = new DatabaseContext();
+        //RepositoryBase sınıfından miras aldığım için o class içinde dbcontext oluşuyor.Buradaki dbler hata vermeyecek çünkü miras alınan sınıftaki db yi kullanıyorlar
 
+        //private DatabaseContext db;
         //her fonksiyonda ayrı ayrı set etmek yerine bunu yapıyoruz
         private DbSet<T> _objectSet;
 
@@ -27,6 +30,7 @@ namespace MyOnlineNotes.BusinessLayer
         //böylece her seferinde veritabanında gereksiz işlem önleniyor
         public Repository()
         {
+            //db =RepositoryBase.CreateContext();//database context oluşumu
             _objectSet = db.Set<T>();
         }
 

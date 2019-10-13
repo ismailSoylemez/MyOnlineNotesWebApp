@@ -7,7 +7,6 @@ C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotesEntities\bin\Debug\
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotesEntities\bin\Debug\EntityFramework.xml
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotesEntities\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotesEntities\bin\Debug\FakeData.pdb
-C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotesEntities\obj\Debug\MyOnlineNotesEntities.csprojAssemblyReference.cache
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotesEntities\obj\Debug\MyOnlineNotesEntities.csproj.CoreCompileInputs.cache
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotesEntities\obj\Debug\MyOnlineNotesEntities.csproj.CopyComplete
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotesEntities\obj\Debug\MyOnlineNotesEntities.dll

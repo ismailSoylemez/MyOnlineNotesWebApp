@@ -13,8 +13,6 @@ namespace MyOnlineNotesWebApp.Controllers
 
         public ActionResult Index()
         {
-            
-
             MyOnlineNotes.BusinessLayer.Test test = new MyOnlineNotes.BusinessLayer.Test();
             //test.InsertTest();
             //test.UpdateTest();

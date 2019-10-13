@@ -5,7 +5,7 @@ using System.Linq;
 using System.Data.Entity;
 using MyOnlineNotesEntities;
 
-namespace MyOnlineNotes.DataAccessLayer
+namespace MyOnlineNotes.DataAccessLayer.EntityFramework
 {
     public class DatabaseContext :DbContext
     {

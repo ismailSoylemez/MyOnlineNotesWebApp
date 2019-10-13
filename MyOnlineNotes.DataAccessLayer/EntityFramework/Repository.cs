@@ -1,5 +1,4 @@
 ﻿using MyOnlineNotesEntities;
-using OfficeOpenXml.FormulaParsing.Excel.Functions.Text;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +8,7 @@ using MyOnlineNotes.DataAccessLayer;
 using System.Data.Entity;
 using System.Linq.Expressions;
 
-namespace MyOnlineNotes.BusinessLayer
+namespace MyOnlineNotes.DataAccessLayer.EntityFramework
 {
 
 
@@ -31,7 +30,7 @@ namespace MyOnlineNotes.BusinessLayer
         public Repository()
         {
             //db =RepositoryBase.CreateContext();//database context oluşumu
-            _objectSet = db.Set<T>();
+            _objectSet = context.Set<T>();
         }
 
         //listeleme methodu
@@ -68,9 +67,9 @@ namespace MyOnlineNotes.BusinessLayer
         }
 
         //save methodu
-        private int Save()
+        public int Save()
         {
-            return db.SaveChanges();
+            return context.SaveChanges();
         }
 
         //tek tip döndüren find 

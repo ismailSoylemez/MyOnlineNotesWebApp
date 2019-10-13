@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using MyOnlineNotesEntities;
 
-namespace MyOnlineNotes.DataAccessLayer
+namespace MyOnlineNotes.DataAccessLayer.EntityFramework
 {
     public class MyInitializer : CreateDatabaseIfNotExists<DatabaseContext>
     {

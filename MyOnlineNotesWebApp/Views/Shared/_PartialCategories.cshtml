@@ -13,11 +13,11 @@
 <h1 class="my-4">Kategoriler</h1>
 <div class="list-group">
 
-    <a href="/Home/Index" class="list-group-item"><span class="fas fa-arrow-circle-right mr-1"></span>Tümü</a>
+    <a href="@Url.Action("Index","Home")"   class="list-group-item"><span class="fas fa-arrow-circle-right mr-1"></span>Tümü</a>
 
     @foreach (var cat in list)
     {
-        <a href="/Category/Select/@cat.Id" title="@cat.Description" class="list-group-item"><span class="fas fa-arrow-circle-right mr-1"></span>@cat.Title</a>
+        <a href="/Home/ByCategory/@cat.Id" title="@cat.Description" class="list-group-item"><span class="fas fa-arrow-circle-right mr-1"></span>@cat.Title</a>
     }
 
 

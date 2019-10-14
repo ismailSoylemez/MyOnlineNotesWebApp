@@ -64,10 +64,10 @@
                             </p>
                             <hr />
                             
-                                @if (string.IsNullOrEmpty(note.Text) == false && note.Text.Length > 127)
+                                @if (string.IsNullOrEmpty(note.Text) == false && note.Text.Length > 70)
                                 {
 
-                                    <p> @(note.Text.Substring(0, 127) + "...")</p>
+                                    <p> @(note.Text.Substring(0, 70) + "...")</p>
                                     <p><a href="#" class="btn btn-dark btn-sm ">devamı <span class="fas fa-arrow-right"></span></a></p>
                                 }
                                 else

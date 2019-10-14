@@ -15,3 +15,11 @@ C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\ob
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\obj\Debug\MyOnlineNotes.DataAccessLayer.pdb
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\FakeData.dll
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\FakeData.pdb
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\Elasticsearch.Net.dll
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\Nest.dll
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\System.Buffers.dll
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\Elasticsearch.Net.xml
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\Nest.xml
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\System.Buffers.xml
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\System.Diagnostics.DiagnosticSource.xml

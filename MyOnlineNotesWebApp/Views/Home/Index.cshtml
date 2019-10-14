@@ -1,8 +1,6 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-}
+﻿@using MyOnlineNotesEntities
 
+@model List<Note>
 
 <!-- Page Content -->
 <div class="container">
@@ -11,8 +9,7 @@
 
         <div class="col-lg-3">
             @*kategoriler*@
-            <h1 class="my-4">Kategoriler</h1>
-            @Html.Partial("_PartialCategories.cshtml")
+            @Html.Partial("_PartialCategories")
         </div>
         <!-- /.col-lg-3 -->
 
@@ -45,27 +42,42 @@
                 </a>
             </div>
 
-            <div class="row">
 
+
+            @*NOTLAR*@
+        <div class="row">
+
+            @foreach (Note note in Model)
+            {
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt="@note.Title"></a>
                         <div class="card-body">
                             <h4 class="card-title">
                                 <a href="#">
-                                    Sit amet, consectetur.
+                                    @note.Title
                                 </a>
                             </h4>
                             <p>
-                                <span class="fas fa-calendar-alt mr-1"></span>12.10.2019<br />
-                                <span class="fas fa-user-tie mr-1"></span>İsmail Söylemez<br />
+                                <span class="fas fa-calendar-alt mr-1"></span>@note.ModifiedOn.ToString()<br />
+                                <span class="fas fa-user-tie mr-1"></span>@note.Owner.Username<br />
                             </p>
                             <hr />
-                            <p class="card-text">
-                                Sapien elit in malesuada semper mi, id sollicitudin urna fermentum.
-                            </p>
+                            
+                                @if (string.IsNullOrEmpty(note.Text) == false && note.Text.Length > 127)
+                                {
 
-                        </div>
+                                    <p> @(note.Text.Substring(0, 127) + "...")</p>
+                                    <p><a href="#" class="btn btn-dark btn-sm ">devamı <span class="fas fa-arrow-right"></span></a></p>
+                                }
+                                else
+                                {
+                                    <p>
+                                        @note.Text
+                                    </p>
+                                }
+                            
+                            </div>
                         <div>
                             <p class="float-right mr-4">
                                 <button type="button" class="btn btn-success ">
@@ -74,185 +86,19 @@
                             </p>
                             <p>
                                 <button class=" float-left ml-2 btn-danger btn-sm" type="button">
-                                    <span class="glyphicon glyphicon-star-empty mr-2"></span>15
+                                    <span class="glyphicon glyphicon-star-empty mr-2"></span>@note.LikeCount
                                 </button>
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">
-                                    Sit amet, consectetur.
-                                </a>
-                            </h4>
-                            <p>
-                                <span class="fas fa-calendar-alt mr-1"></span>12.10.2019<br />
-                                <span class="fas fa-user-tie mr-1"></span>İsmail Söylemez<br />
-                            </p>
-                            <hr />
-                            <p class="card-text">
-                                Sapien elit in malesuada semper mi, id sollicitudin urna fermentum.
-                            </p>
+            }
 
-                        </div>
-                        <div>
-                            <p class="float-right mr-4">
-                                <button type="button" class="btn btn-success ">
-                                    <span class="glyphicon glyphicon-comment mr-2"></span>Yorumlar
-                                </button>
-                            </p>
-                            <p>
-                                <button class=" float-left ml-2 btn-danger btn-sm" type="button">
-                                    <span class="glyphicon glyphicon-star-empty mr-2"></span>15
-                                </button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">
-                                    Sit amet, consectetur.
-                                </a>
-                            </h4>
-                            <p>
-                                <span class="fas fa-calendar-alt mr-1"></span>12.10.2019<br />
-                                <span class="fas fa-user-tie mr-1"></span>İsmail Söylemez<br />
-                            </p>
-                            <hr />
-                            <p class="card-text">
-                                Sapien elit in malesuada semper mi, id sollicitudin urna fermentum.
-                            </p>
-
-                        </div>
-                        <div>
-                            <p class="float-right mr-4">
-                                <button type="button" class="btn btn-success ">
-                                    <span class="glyphicon glyphicon-comment mr-2"></span>Yorumlar
-                                </button>
-                            </p>
-                            <p>
-                                <button class=" float-left ml-2 btn-danger btn-sm" type="button">
-                                    <span class="glyphicon glyphicon-star-empty mr-2"></span>15
-                                </button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">
-                                    Sit amet, consectetur.
-                                </a>
-                            </h4>
-                            <p>
-                                <span class="fas fa-calendar-alt mr-1"></span>12.10.2019<br />
-                                <span class="fas fa-user-tie mr-1"></span>İsmail Söylemez<br />
-                            </p>
-                            <hr />
-                            <p class="card-text">
-                                Sapien elit in malesuada semper mi, id sollicitudin urna fermentum.
-                            </p>
-
-                        </div>
-                        <div>
-                            <p class="float-right mr-4">
-                                <button type="button" class="btn btn-success ">
-                                    <span class="glyphicon glyphicon-comment mr-2"></span>Yorumlar
-                                </button>
-                            </p>
-                            <p>
-                                <button class=" float-left ml-2 btn-danger btn-sm" type="button">
-                                    <span class="glyphicon glyphicon-star-empty mr-2"></span>15
-                                </button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">
-                                    Sit amet, consectetur.
-                                </a>
-                            </h4>
-                            <p>
-                                <span class="fas fa-calendar-alt mr-1"></span>12.10.2019<br />
-                                <span class="fas fa-user-tie mr-1"></span>İsmail Söylemez<br />
-                            </p>
-                            <hr />
-                            <p class="card-text">
-                                Sapien elit in malesuada semper mi, id sollicitudin urna fermentum.
-                            </p>
-
-                        </div>
-                        <div>
-                            <p class="float-right mr-4">
-                                <button type="button" class="btn btn-success ">
-                                    <span class="glyphicon glyphicon-comment mr-2"></span>Yorumlar
-                                </button>
-                            </p>
-                            <p>
-                                <button class=" float-left ml-2 btn-danger btn-sm" type="button">
-                                    <span class="glyphicon glyphicon-star-empty mr-2"></span>15
-                                </button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">
-                                    Sit amet, consectetur.
-                                </a>
-                            </h4>
-                            <p>
-                                <span class="fas fa-calendar-alt mr-1"></span>12.10.2019<br />
-                                <span class="fas fa-user-tie mr-1"></span>İsmail Söylemez<br />
-                            </p>
-                            <hr />
-                            <p class="card-text">
-                                Sapien elit in malesuada semper mi, id sollicitudin urna fermentum.
-                            </p>
-
-                        </div>
-                        <div>
-                            <p class="float-right mr-4">
-                                <button type="button" class="btn btn-success ">
-                                    <span class="glyphicon glyphicon-comment mr-2"></span>Yorumlar
-                                </button>
-                            </p>
-                            <p>
-                                <button class=" float-left ml-2 btn-danger btn-sm" type="button">
-                                    <span class="glyphicon glyphicon-star-empty mr-2"></span>15
-                                </button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-            <!-- /.row -->
 
         </div>
+            <!-- /.row -->
+        </div>
         <!-- /.col-lg-9 -->
-
     </div>
     <!-- /.row -->
 

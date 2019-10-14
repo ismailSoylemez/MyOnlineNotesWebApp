@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyOnlineNotes.BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,14 +14,16 @@ namespace MyOnlineNotesWebApp.Controllers
 
         public ActionResult Index()
         {
-            MyOnlineNotes.BusinessLayer.Test test = new MyOnlineNotes.BusinessLayer.Test();
+            //MyOnlineNotes.BusinessLayer.Test test = new MyOnlineNotes.BusinessLayer.Test();
             //test.InsertTest();
             //test.UpdateTest();
             //test.DeleteTest();
+            //test.CommentTest();
 
-            test.CommentTest();
+            NoteManager nm = new NoteManager();
 
-            return View();
+
+            return View(nm.GetAllNote());
         }
     }
 }

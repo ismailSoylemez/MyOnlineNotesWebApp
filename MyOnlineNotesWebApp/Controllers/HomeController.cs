@@ -28,7 +28,8 @@ namespace MyOnlineNotesWebApp.Controllers
             //}
 
             NoteManager nm = new NoteManager();
-            return View(nm.GetAllNote());
+            return View(nm.GetAllNote().OrderByDescending(x => x.ModifiedOn).ToList());//veriyi sqlden çektik tersten sıraladık
+            //return View(nm.GetAllNoteQueryable().OrderByDescending(x => x.ModifiedOn).ToList());//veriyi sqlden çektik sıraladık
         }
 
 
@@ -51,8 +52,20 @@ namespace MyOnlineNotesWebApp.Controllers
             }
 
            //bu modeli index view ına gönderdi
-            return View("Index",cat.Notes);
+            return View("Index",cat.Notes.OrderByDescending(x=>x.ModifiedOn).ToList());
         }
+
+
+        public ActionResult MostLiked()
+        {
+
+            NoteManager nm = new NoteManager();
+            return View("Index", nm.GetAllNote().OrderByDescending(x=>x.LikeCount).ToList());
+
+
+
+        }
+
 
 
 

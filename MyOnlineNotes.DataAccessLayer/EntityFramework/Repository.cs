@@ -40,7 +40,15 @@ namespace MyOnlineNotes.DataAccessLayer.EntityFramework
         {
             //ilgili dbseti elde etmeye çalşıyor
             return _objectSet.ToList();
-        } 
+        }
+        public IQueryable<T> ListQueryable()
+        {
+            //ilgili dbseti elde etmeye çalşıyor
+            return _objectSet.AsQueryable<T>();
+        }
+
+
+
 
         //kritere göre listeleme
         public List<T> List(Expression<Func<T,bool>> where )

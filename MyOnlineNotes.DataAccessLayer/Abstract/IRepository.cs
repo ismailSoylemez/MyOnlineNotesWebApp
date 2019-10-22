@@ -13,7 +13,10 @@ namespace MyOnlineNotes.DataAccessLayer.Abstract
          List<T> List();
 
          List<T> List(Expression<Func<T, bool>> where);
-        int Insert(T obj);
+         IQueryable<T> ListQueryable();
+
+
+         int Insert(T obj);
 
          int Update(T obj);
 

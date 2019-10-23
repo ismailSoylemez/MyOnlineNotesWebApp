@@ -1,5 +1,6 @@
 ﻿using MyOnlineNotes.BusinessLayer;
 using MyOnlineNotesEntities;
+using MyOnlineNotesWebApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,7 +67,38 @@ namespace MyOnlineNotesWebApp.Controllers
 
         }
 
+        public ActionResult About()
+        {
+            return View();
+        }
 
+
+
+
+
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(LoginViewModel model)
+        {
+            return View();
+        }
+
+
+
+
+        public ActionResult Register()
+        {
+            return View();
+        }
+        public ActionResult Logout()
+        {
+            return View();
+        }
 
 
 

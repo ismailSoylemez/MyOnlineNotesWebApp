@@ -1,0 +1,60 @@
+﻿@using MyOnlineNotesWebApp.ViewModels
+@model RegisterViewModel
+
+@{
+    ViewBag.Title = "Register";
+}
+
+
+
+<link href="~/Content/Login-Register.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+<script>
+    //sayfa yüklendiğinde footer elementini gizle
+    $(function () {
+
+        $("footer").parent.hide();
+
+    });
+</script>
+<!------ Include the above in your HEAD tag ---------->
+
+@using (Html.BeginForm())
+{
+    <div class="login-wrap">
+        <div class="login-html">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Kayıt Ol</label>
+            <input id="tab-2" type="radio" name="tab" class="for-pwd"><label for="tab-2" class="tab"></label>
+            <div class="login-form">
+                <div class="sign-in-htm">
+                    <div class="group">
+                        <label for="user" class="label">Username</label>
+                        @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "Kullanıcı Adınız" })
+                    </div>
+                    <div class="group">
+                        <label for="user" class="label">Email</label>
+                        @Html.TextBoxFor(m => m.EMail, new { @class = "form-control", placeholder = "Email" })
+                    </div>
+
+                    <div class="group">
+                        <label for="user" class="label">Password</label>
+                        @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = "Şifre" ,type="password"})
+                    </div>
+                    <div class="group">
+                        <label for="user" class="label">Password</label>
+                        @Html.TextBoxFor(m => m.RePassword, new { @class = "form-control", placeholder = "Şifre Tekrar"  ,type="password"})
+                    </div>
+
+                    <div class="group">
+                        <input type="submit" class="button" value="Kayıt Ol">
+                    </div>
+                    <div class="hr"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

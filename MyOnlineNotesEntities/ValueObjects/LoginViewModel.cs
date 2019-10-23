@@ -5,7 +5,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace MyOnlineNotesWebApp.ViewModels
+
+//UI İÇİNDE BULUNAN VİEWMODEL CLASSLARINI ENTİTY KATMANINA TAŞIDIK.ÇÜNKÜ KULLANICI KONTROLLERİNİ BUSİNESS KATMANINDA YAPACAĞIM BUSİNESS KATMANI UI KATMANINA DİREKT OLARAK ERİŞEMEZ.
+namespace MyOnlineNotesEntities.ValueObject
 {
     public class LoginViewModel
     {

@@ -1,6 +1,7 @@
 ﻿using MyOnlineNotes.BusinessLayer;
+using MyOnlineNotes.DataAccessLayer.EntityFramework;
 using MyOnlineNotesEntities;
-using MyOnlineNotesWebApp.ViewModels;
+using MyOnlineNotesEntities.ValueObject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -86,7 +87,7 @@ namespace MyOnlineNotesWebApp.Controllers
         public ActionResult Login(LoginViewModel model)
         {
             //giriş kontrolü ve yönlendirme
-            // sessionda kullanıcı bilgisi saklama
+            // sessionda kullanıcı bilgisi saklama           
 
 
             return View();
@@ -103,18 +104,79 @@ namespace MyOnlineNotesWebApp.Controllers
         [HttpPost]
         public ActionResult Register(RegisterViewModel model)
         {
+            //bu kontrolleri burada yapamazsın BusinessLayerda yapman gerekiyor
             //kullanıcı username kontrolü 
             //kullanıcı eposta kontrolü
             //kayıt işlemi
             //aktivasyon e postası gönderimi
 
-            return View();
+            //gelen model geçerli mi ?
+            if (ModelState.IsValid)
+            {
+
+                MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
+                OnlineNoteUser user = null;
+
+                try
+                {
+                   //modeli MyOnlineNotesUserManager a gönderiyoruz
+                    user = eum.RegisterUser(model);
+                }
+                catch (Exception ex)
+                {
+
+                    ModelState.AddModelError("", ex.Message);
+                }
+
+
+
+
+
+                //if (model.Username == "aaa")
+                //{
+                //    ModelState.AddModelError("","Kullanıcı adı kullanılıyor");//kendi hata mesajımı yazdırmak istiyorum
+                //}
+                //if (model.EMail=="aaa@gmail.com")
+                //{
+                //    ModelState.AddModelError("", "Eposta adresi kullanılıyor");
+                //}
+
+                ////hatalarımı yakalıyorum
+                //foreach (var item in ModelState)
+                //{
+                //    if (item.Value.Errors.Count>0)
+                //    {
+                //        return View(model);//hata varsa sayfaya geri gönderdim
+                //    }
+                //}
+
+                if (user ==null)
+                {
+                    return View(model);
+                }
+
+
+                return RedirectToAction("RegisterOk");
+
+            }
+
+
+
+
+            return View(model);
         }
         public ActionResult UserActivate(Guid activate )
         {
             //kullanıcı aktivasyonu sağlanacak
             return View();
         }
+        
+        public ActionResult RegisterOk()
+        {
+            return View();
+        }
+
+
 
 
 

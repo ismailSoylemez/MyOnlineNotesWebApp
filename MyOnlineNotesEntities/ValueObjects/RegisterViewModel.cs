@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace MyOnlineNotesWebApp.ViewModels
+namespace MyOnlineNotesEntities.ValueObject
 {
     public class RegisterViewModel
     {

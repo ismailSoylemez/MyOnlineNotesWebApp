@@ -85,16 +85,41 @@ namespace MyOnlineNotesWebApp.Controllers
         [HttpPost]
         public ActionResult Login(LoginViewModel model)
         {
+            //giriş kontrolü ve yönlendirme
+            // sessionda kullanıcı bilgisi saklama
+
+
             return View();
         }
 
 
 
-
+        [HttpGet]
         public ActionResult Register()
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Register(RegisterViewModel model)
+        {
+            //kullanıcı username kontrolü 
+            //kullanıcı eposta kontrolü
+            //kayıt işlemi
+            //aktivasyon e postası gönderimi
+
+            return View();
+        }
+        public ActionResult UserActivate(Guid activate )
+        {
+            //kullanıcı aktivasyonu sağlanacak
+            return View();
+        }
+
+
+
+
+
         public ActionResult Logout()
         {
             return View();

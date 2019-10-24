@@ -24,7 +24,7 @@ namespace MyOnlineNotes.BusinessLayer
 
             if (user!=null)
             {
-                throw new Exception("Kayıtlı kullanıcı adı ya da e-posta") //bu hatayı homecontrollerda yakalamam gerekir...
+                throw new Exception("Kayıtlı kullanıcı adı ya da e-posta"); //bu hatayı homecontrollerda yakalamam gerekir...
             }
 
 

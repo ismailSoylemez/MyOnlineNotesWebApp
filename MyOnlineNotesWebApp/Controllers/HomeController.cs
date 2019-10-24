@@ -87,7 +87,31 @@ namespace MyOnlineNotesWebApp.Controllers
         public ActionResult Login(LoginViewModel model)
         {
             //giriş kontrolü ve yönlendirme
-            // sessionda kullanıcı bilgisi saklama           
+            // sessionda kullanıcı bilgisi saklama     
+
+            if (ModelState.IsValid) //gelen model uygunsa
+            {
+                MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
+                BusinessLayerResult<OnlineNoteUser> res = eum.LoginUser(model);
+
+                if (res.Errors.Count>0) //hata vardır
+                {
+                    res.Errors.ForEach(x => ModelState.AddModelError("", x));
+                    return View(model);
+                }
+
+                Session["login"] = res.Result;
+               
+                //hata yoksa
+                return RedirectToAction("Index");
+
+
+
+
+            }
+
+
+
 
 
             return View();

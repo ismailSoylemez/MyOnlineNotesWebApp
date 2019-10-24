@@ -11,6 +11,7 @@
 <script src="~/Scripts/bootstrap.min.js"></script>
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
 
+
 <script>
     //sayfa yüklendiğinde footer elementini gizle
     $(function () {
@@ -21,6 +22,20 @@
 </script>
 <!------ Include the above in your HEAD tag ---------->
 
+<style type="text/css">
+    .validation-summary-errors {
+        border: 2px dotted black;
+        background-color: brown;
+        border-radius: 8px;
+    }
+
+        .validation-summary-errors ul {
+            list-style: none;
+            padding: 6px;
+            color: aliceblue
+        }
+</style>
+
 @using (Html.BeginForm())
 {
     <div class="login-wrap">
@@ -29,6 +44,8 @@
             <input id="tab-2" type="radio" name="tab" class="for-pwd"><label for="tab-2" class="tab"></label>
             <div class="login-form">
                 <div class="sign-in-htm">
+
+                    @Html.ValidationSummary(false)
                     <div class="group">
                         <label for="user" class="label">Username</label>
                         @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "Kullanıcı Adınız" })
@@ -36,7 +53,7 @@
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Password</label>
-                        @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = "Şifreniz" ,type="password"})
+                        @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = "Şifreniz", type = "password" })
                     </div>
                     <div class="group">
                         <input type="submit" class="button" value="Giriş Yap">

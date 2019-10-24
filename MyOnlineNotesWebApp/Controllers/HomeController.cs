@@ -115,19 +115,18 @@ namespace MyOnlineNotesWebApp.Controllers
             {
 
                 MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
-                OnlineNoteUser user = null;
+                BusinessLayerResult<OnlineNoteUser> res = eum.RegisterUser(model);
 
-                try
-                {
-                   //modeli MyOnlineNotesUserManager a gönderiyoruz
-                    user = eum.RegisterUser(model);
-                }
-                catch (Exception ex)
-                {
 
-                    ModelState.AddModelError("", ex.Message);
+                //hata varsa
+                if (res.Errors.Count>0) 
+                {
+                    res.Errors.ForEach(x => ModelState.AddModelError("", x));
+                    return View(model);
                 }
 
+                //hata yoksa
+                return RedirectToAction("RegisterOk");
 
 
 
@@ -149,15 +148,6 @@ namespace MyOnlineNotesWebApp.Controllers
                 //        return View(model);//hata varsa sayfaya geri gönderdim
                 //    }
                 //}
-
-                if (user ==null)
-                {
-                    return View(model);
-                }
-
-
-                return RedirectToAction("RegisterOk");
-
             }
 
 

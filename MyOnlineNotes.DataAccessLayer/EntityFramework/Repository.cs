@@ -60,12 +60,36 @@ namespace MyOnlineNotes.DataAccessLayer.EntityFramework
         public int Insert (T obj)
         {
             _objectSet.Add(obj);
+
+
+            //gelen insert nesnesi MyEntityBase ise burası çalışacak
+            if (obj is MyEntityBase)
+            {
+                MyEntityBase o = obj as MyEntityBase;
+                DateTime now = DateTime.Now;
+
+                o.CreatedOn = now;
+                o.ModifiedOn = now;
+                o.ModifiedUsername = "system"; //todo : işlem yapan kullanıcı adı yazılmalı
+            }
+
+
             return Save();
         }
 
         //update methodu
         public int Update(T obj)
         {
+            if (obj is MyEntityBase)
+            {
+                MyEntityBase o = obj as MyEntityBase;
+
+                o.ModifiedOn = DateTime.Now;
+                o.ModifiedUsername = "system"; //todo : işlem yapan kullanıcı adı yazılmalı
+            }
+
+
+
             return Save();
         }
 

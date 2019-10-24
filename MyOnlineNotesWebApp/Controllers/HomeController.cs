@@ -1,6 +1,7 @@
 ﻿using MyOnlineNotes.BusinessLayer;
 using MyOnlineNotes.DataAccessLayer.EntityFramework;
 using MyOnlineNotesEntities;
+using MyOnlineNotesEntities.Messages;
 using MyOnlineNotesEntities.ValueObject;
 using System;
 using System.Collections.Generic;
@@ -96,7 +97,17 @@ namespace MyOnlineNotesWebApp.Controllers
 
                 if (res.Errors.Count>0) //hata vardır
                 {
-                    res.Errors.ForEach(x => ModelState.AddModelError("", x));
+                    res.Errors.ForEach(x => ModelState.AddModelError("", x.Message));
+
+
+                    //eğer kullanıcı aktif değil kodunu içeriyorsa dönen hata mesajı değiştirilebilir
+                    if (res.Errors.Find(x => x.Code == ErrorMessageCode.UserIsNotActive) != null)
+                    {
+                        ViewBag.SetLink = "http://Home/Activate/1234-4567-7890";
+                    }
+
+
+
                     return View(model);
                 }
 
@@ -145,33 +156,15 @@ namespace MyOnlineNotesWebApp.Controllers
                 //hata varsa
                 if (res.Errors.Count>0) 
                 {
-                    res.Errors.ForEach(x => ModelState.AddModelError("", x));
+                    res.Errors.ForEach(x => ModelState.AddModelError("", x.Message));
+
+
                     return View(model);
                 }
 
                 //hata yoksa
                 return RedirectToAction("RegisterOk");
 
-
-
-
-                //if (model.Username == "aaa")
-                //{
-                //    ModelState.AddModelError("","Kullanıcı adı kullanılıyor");//kendi hata mesajımı yazdırmak istiyorum
-                //}
-                //if (model.EMail=="aaa@gmail.com")
-                //{
-                //    ModelState.AddModelError("", "Eposta adresi kullanılıyor");
-                //}
-
-                ////hatalarımı yakalıyorum
-                //foreach (var item in ModelState)
-                //{
-                //    if (item.Value.Errors.Count>0)
-                //    {
-                //        return View(model);//hata varsa sayfaya geri gönderdim
-                //    }
-                //}
             }
 
 

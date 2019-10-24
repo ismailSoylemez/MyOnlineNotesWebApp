@@ -46,6 +46,12 @@
                 <div class="sign-in-htm">
 
                     @Html.ValidationSummary(false)
+
+                    @if (ViewBag.SetLink!=null)
+                    {
+                        <a href="@ViewBag.SetLink" class="btn btn-primary">Activate</a>
+                    }
+
                     <div class="group">
                         <label for="user" class="label">Username</label>
                         @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "Kullanıcı Adınız" })

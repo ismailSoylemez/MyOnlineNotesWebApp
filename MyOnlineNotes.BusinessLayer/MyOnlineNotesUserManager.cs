@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MyOnlineNotes.DataAccessLayer.EntityFramework;
 using MyOnlineNotesEntities;
+using MyOnlineNotesEntities.Messages;
 using MyOnlineNotesEntities.ValueObject;
 
 namespace MyOnlineNotes.BusinessLayer
@@ -29,11 +30,11 @@ namespace MyOnlineNotes.BusinessLayer
                 //birden fazla hata mesajı ekleyebileceğim bir yapı oluşturdum
                 if(user.Username == data.Username)
                 {
-                    res.Errors.Add("Kullanıcı adı kayıtlı");
+                    res.AddError(ErrorMessageCode.UsernameAlreadyExist, "Kullanıcı adı kayıtlı");
                 }
                 if (user.Email == data.EMail)
                 {
-                    res.Errors.Add("Eposta adresi kayıtlı");
+                    res.AddError(ErrorMessageCode.EmailAlreadyExist, "Email adresi kayıtlı");
                 }
             }
             else//eşleşen kullanıcı yoksa kullanıcıyı database ye ekleyecek
@@ -79,12 +80,13 @@ namespace MyOnlineNotes.BusinessLayer
             {
                 if (!res.Result.IsActive)//kullanıcı aktif değilse
                 {
-                    res.Errors.Add("Kullanıcı aktifleştirilmemiştir.Lütfen e-posta adresinizi kontrol ediniz.");
+                    res.AddError(ErrorMessageCode.UserIsNotActive, "Kullanıcı aktif değil.");
+                    res.AddError(ErrorMessageCode.CheckYourEmail, "Email adresinizi kontrol ediniz.");
                 }
             }
             else
             {
-                res.Errors.Add("Kullanıcı adı yada şifre uyuşmuyor");
+                res.AddError(ErrorMessageCode.UsernameOrPassWrong, "Kullanıcı adı yada şifre uyuşmuyor");
             }
 
             return res;

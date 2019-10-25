@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿
+@using MyOnlineNotesEntities
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,18 +24,26 @@
     <!-- Bootstrap core JavaScript -->
     <script src="~/Scripts/jquery-3.0.0.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-
-
-
-
 </head>
 
 <body>
 
+    @{ 
+        OnlineNoteUser user = null;
+
+        if (Session["login"] != null)
+        {
+            user = Session["login"] as OnlineNoteUser;
+        }
+
+
+    }
+
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/Home/Index">
                 <span class="fas fa-book-reader"></span>
                 My Online Notes
             </a>
@@ -42,11 +53,16 @@
             @* Menü *@
             <div class="collapse navbar-collapse ml-2" id="navbarResponsive">
                 <ul class="navbar-nav float-md-left">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span class="fas fa-wrench mr-1"></span>Yönetim
-                        </a>
-                    </li>
+
+                    @if (user != null)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span class="fas fa-wrench mr-1"></span>Yönetim
+                            </a>
+                        </li>
+                    }
+
                     <li class="nav-item">
                         <a class="nav-link" href="/Home/MostLiked">
                             <span class="far fa-heart mr-1"></span>En Beğenilenler
@@ -73,14 +89,24 @@
                     Üye Ol / Giriş Yap
                 </button>
                 <div class="dropdown-menu dropdown-menu-right ">
-                    <a href="/Home/Login" class="btn-danger dropdown-item fas fa-sign-in-alt mr-1">Giriş</a>
-                    <a href="/Home/Register" class="btn-danger dropdown-item fas fa-sign-in-alt mr-1">Üye Ol</a>
-                    <button class="btn-danger dropdown-item fas fa-external-link-alt mr-1" type="button">Çıkış</button>
+                    @if (user == null)
+                    {
+                        <a href="/Home/Login" class="btn-danger dropdown-item fas fa-sign-in-alt mr-1">Giriş</a>
+                        <a href="/Home/Register" class="btn-danger dropdown-item fas fa-sign-in-alt mr-1">Üye Ol</a>
+                    }
+                    else
+                    {
+                        <a href="/Home/Logout" class="btn-danger dropdown-item fas fa-sign-in-alt mr-1">Çıkış</a>
+                    }
                 </div>
             </div>
-            <div class="mr-3 ml-3">
-                <a href="#"><span class="fas fa-user-tie mr-1"></span>İsmail Söylemez</a>
-            </div>
+            @if (user != null)
+            {
+                <div class="mr-3 ml-3">
+                    <a href="/Home/Profile"><span class="fas fa-user-tie mr-1"></span>@user.Name  @user.Surname</a>
+                </div>
+            }
+
 
 
         </div>

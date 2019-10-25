@@ -174,6 +174,14 @@ namespace MyOnlineNotesWebApp.Controllers
         }
 
 
+        public ActionResult RegisterOk()
+        {
+            return View();
+        }
+
+
+
+
 
         public ActionResult UserActivate(Guid id )
         {
@@ -196,6 +204,7 @@ namespace MyOnlineNotesWebApp.Controllers
         {
             return View();
         }
+
         public ActionResult UserActivateCancel()
         {
             List<ErrorMessageObj> errors = null;
@@ -207,12 +216,6 @@ namespace MyOnlineNotesWebApp.Controllers
             return View(errors);
         }
 
-
-
-        public ActionResult RegisterOk()
-        {
-            return View();
-        }
 
 
 

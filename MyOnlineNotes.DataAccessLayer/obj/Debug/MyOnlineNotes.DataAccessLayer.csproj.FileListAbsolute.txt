@@ -23,3 +23,5 @@ C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bi
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\Nest.xml
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\System.Buffers.xml
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\MyOnlineNotes.Common.dll
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.DataAccessLayer\bin\Debug\MyOnlineNotes.Common.pdb

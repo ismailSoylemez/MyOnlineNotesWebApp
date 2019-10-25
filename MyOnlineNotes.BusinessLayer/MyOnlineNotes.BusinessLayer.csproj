@@ -66,6 +66,10 @@
     <Compile Include="Test.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MyOnlineNotes.Common\MyOnlineNotes.Common.csproj">
+      <Project>{bfb3debc-162c-4a2f-91f4-48742a52d9c8}</Project>
+      <Name>MyOnlineNotes.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyOnlineNotes.DataAccessLayer\MyOnlineNotes.DataAccessLayer.csproj">
       <Project>{21a9c8a0-9585-444b-8c61-d9e822e5489d}</Project>
       <Name>MyOnlineNotes.DataAccessLayer</Name>

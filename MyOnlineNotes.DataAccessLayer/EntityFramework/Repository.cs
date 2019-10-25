@@ -8,6 +8,7 @@ using MyOnlineNotes.DataAccessLayer;
 using System.Data.Entity;
 using System.Linq.Expressions;
 using MyOnlineNotes.DataAccessLayer.Abstract;
+using MyOnlineNotes.Common;
 
 namespace MyOnlineNotes.DataAccessLayer.EntityFramework
 {
@@ -70,7 +71,7 @@ namespace MyOnlineNotes.DataAccessLayer.EntityFramework
 
                 o.CreatedOn = now;
                 o.ModifiedOn = now;
-                o.ModifiedUsername = "system"; //todo : işlem yapan kullanıcı adı yazılmalı
+                o.ModifiedUsername = App.Common.GetCurrentUsername(); //todo : işlem yapan kullanıcı adı yazılmalı
             }
 
 

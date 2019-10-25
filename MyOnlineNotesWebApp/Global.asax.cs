@@ -1,3 +1,5 @@
+using MyOnlineNotes.Common;
+using MyOnlineNotesWebApp.Init;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +11,13 @@ namespace MyOnlineNotesWebApp
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+        //web uygulamsý ayaða kalktýðýnda Ýlk olarak Global asax çalýþýr
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            App.Common = new WebCommon();
         }
     }
 }

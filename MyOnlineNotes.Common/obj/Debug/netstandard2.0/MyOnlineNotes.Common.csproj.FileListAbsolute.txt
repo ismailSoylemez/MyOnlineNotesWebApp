@@ -1,0 +1,9 @@
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.Common\bin\Debug\netstandard2.0\MyOnlineNotes.Common.deps.json
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.Common\bin\Debug\netstandard2.0\MyOnlineNotes.Common.dll
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.Common\bin\Debug\netstandard2.0\MyOnlineNotes.Common.pdb
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.Common\obj\Debug\netstandard2.0\MyOnlineNotes.Common.csprojAssemblyReference.cache
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.Common\obj\Debug\netstandard2.0\MyOnlineNotes.Common.csproj.CoreCompileInputs.cache
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.Common\obj\Debug\netstandard2.0\MyOnlineNotes.Common.AssemblyInfoInputs.cache
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.Common\obj\Debug\netstandard2.0\MyOnlineNotes.Common.AssemblyInfo.cs
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.Common\obj\Debug\netstandard2.0\MyOnlineNotes.Common.dll
+C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.Common\obj\Debug\netstandard2.0\MyOnlineNotes.Common.pdb

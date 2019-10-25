@@ -172,6 +172,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Init\OnlineNotesUser.cs" />
+    <Compile Include="Init\WebCommon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -207,6 +209,10 @@
     <ProjectReference Include="..\MyOnlineNotes.BusinessLayer\MyOnlineNotes.BusinessLayer.csproj">
       <Project>{5e7fdcae-b386-4a58-8eb0-013a4358dc99}</Project>
       <Name>MyOnlineNotes.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyOnlineNotes.Common\MyOnlineNotes.Common.csproj">
+      <Project>{bfb3debc-162c-4a2f-91f4-48742a52d9c8}</Project>
+      <Name>MyOnlineNotes.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\MyOnlineNotes.DataAccessLayer\MyOnlineNotes.DataAccessLayer.csproj">
       <Project>{21A9C8A0-9585-444B-8C61-D9E822E5489D}</Project>

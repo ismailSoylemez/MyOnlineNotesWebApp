@@ -78,6 +78,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MyOnlineNotes.Common\MyOnlineNotes.Common.csproj">
+      <Project>{bfb3debc-162c-4a2f-91f4-48742a52d9c8}</Project>
+      <Name>MyOnlineNotes.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyOnlineNotesEntities\MyOnlineNotesEntities.csproj">
       <Project>{840610ab-92be-410f-94bd-01b91803ef08}</Project>
       <Name>MyOnlineNotesEntities</Name>

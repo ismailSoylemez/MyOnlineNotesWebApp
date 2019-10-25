@@ -172,11 +172,16 @@ namespace MyOnlineNotesWebApp.Controllers
 
             return View(model);
         }
+
+
+
         public ActionResult UserActivate(Guid activate )
         {
             //kullanıcı aktivasyonu sağlanacak
             return View();
         }
+
+
         
         public ActionResult RegisterOk()
         {
@@ -191,7 +196,9 @@ namespace MyOnlineNotesWebApp.Controllers
 
         public ActionResult Logout()
         {
-            return View();
+            Session.Clear();
+
+            return RedirectToAction("Index");
         }
 
 

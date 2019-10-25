@@ -1,0 +1,44 @@
+﻿@using MyOnlineNotesEntities.Messages
+@model List<ErrorMessageObj>
+
+
+@{
+    ViewBag.Title = "Hesap Geçersiz";
+}
+
+
+
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+<script>
+    //sayfa yüklendiğinde footer elementini gizle
+    $(function () {
+
+        $("footer").hide();
+
+        setTimeout(function () {
+            window.location = "/Home/Index";
+        }, 10000);
+
+    });
+</script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="card text-white bg-danger ml-lg-5  align-items-center ml-lg-auto mr-auto " style="width: 100rem; height: 15rem; border:solid black ; border-radius:14px 14px 14px 14px ">
+    <div class="card-header ">YÖNLEDİRİLİYOR...</div>
+    <div class="card-body mt-md-4">
+        <div>
+            <h5 class="card-title">Hesap Geçerli değil <span class="ml-1 fas fa-check"></span></h5>
+        </div>
+        <p class="text-justify">
+            @foreach (ErrorMessageObj err in Model)
+            {
+                @err.Message<br/>
+            }
+        </p>
+
+    </div>
+</div>

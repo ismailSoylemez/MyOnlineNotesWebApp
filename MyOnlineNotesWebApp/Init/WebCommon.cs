@@ -18,7 +18,7 @@ namespace MyOnlineNotesWebApp.Init
                 return user.Username;
             }
 
-            return null;
+            return "system";
 
         }
     }

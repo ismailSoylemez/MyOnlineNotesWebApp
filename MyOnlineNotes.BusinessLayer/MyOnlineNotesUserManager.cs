@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MyOnlineNotes.Common.Helpers;
 using MyOnlineNotes.DataAccessLayer.EntityFramework;
 using MyOnlineNotesEntities;
 using MyOnlineNotesEntities.Messages;
@@ -52,10 +53,21 @@ namespace MyOnlineNotes.BusinessLayer
                 if (dbResult > 0) //başarılıysa
                 {
                     //kullanıcı insert olmuş demektir
-                    repo_user.Find(x => x.Email == data.EMail && x.Username == data.Username);
+                    res.Result = repo_user.Find(x => x.Email == data.EMail && x.Username == data.Username);
 
                     //TODO : aktivasyon maili atılacak
                     //layerResult.Result.ActivatedGuid();
+
+                    string siteUri = ConfigHelper.Get<string>("SiteRootUri");
+                    string activateUri = $"{siteUri}/Home/UserActivate/{res.Result.ActivatedGuid}";//linkimiz
+                    string body = $"Merhaba {res.Result.Username};<br/><br/>Hesabınızı aktifleştirmek için <a href='{activateUri}' target='_blank' >tıklayınız</a>.";
+
+
+                    MailHelper.SendMail(body, res.Result.Email,"Hesap Aktifleştirme");
+
+                    
+
+
                 }
 
             }
@@ -91,6 +103,37 @@ namespace MyOnlineNotes.BusinessLayer
 
             return res;
 
+
+
+        }
+
+
+
+        public BusinessLayerResult<OnlineNoteUser> ActivatedUser(Guid activateId)
+        {
+            BusinessLayerResult<OnlineNoteUser> res = new BusinessLayerResult<OnlineNoteUser>();
+            res.Result = repo_user.Find(x => x.ActivatedGuid == activateId);
+
+            if (res.Result != null)
+            {
+                if (res.Result.IsActive)
+                {
+                    res.AddError(ErrorMessageCode.UserAlreadyActive, "Kullanıcı zaten aktif edilmiştir!");
+                    return res;
+                }
+
+                //eğer aktif değilse
+                res.Result.IsActive = true;
+                repo_user.Update(res.Result);
+
+            }
+            else
+            {
+                res.AddError(ErrorMessageCode.ActivateIdDoesNotExist, "Aktifleştirmek için kullanıcı bulunamadı ");
+
+            }
+
+            return res;
 
 
         }

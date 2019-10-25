@@ -175,14 +175,40 @@ namespace MyOnlineNotesWebApp.Controllers
 
 
 
-        public ActionResult UserActivate(Guid activate )
+        public ActionResult UserActivate(Guid id )
         {
             //kullanıcı aktivasyonu sağlanacak
+
+            MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
+            BusinessLayerResult<OnlineNoteUser> res = eum.ActivatedUser(id);
+
+            if (res.Errors.Count>0)
+            {
+                TempData["errors"] = res.Errors;
+                return RedirectToAction("UserActivateCancel");
+            }
+
+
+            return RedirectToAction("UserActivateOk");
+        }
+
+        public ActionResult UserActivateOk()
+        {
             return View();
+        }
+        public ActionResult UserActivateCancel()
+        {
+            List<ErrorMessageObj> errors = null;
+            if (TempData["errors"]!=null)
+            {
+                 errors = TempData["errors"] as List<ErrorMessageObj>;
+            }
+
+            return View(errors);
         }
 
 
-        
+
         public ActionResult RegisterOk()
         {
             return View();

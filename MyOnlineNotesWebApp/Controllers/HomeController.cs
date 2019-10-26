@@ -3,6 +3,7 @@ using MyOnlineNotes.DataAccessLayer.EntityFramework;
 using MyOnlineNotesEntities;
 using MyOnlineNotesEntities.Messages;
 using MyOnlineNotesEntities.ValueObject;
+using MyOnlineNotesWebApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -252,7 +253,26 @@ namespace MyOnlineNotesWebApp.Controllers
 
 
 
+        public ActionResult TestNotify()
+        {
 
+            InfoViewModel model = new InfoViewModel()
+            {
+
+                Header = "yönlendirme",
+                Title = "okinfotest",
+                RedirectingTimeout = 3000,
+                Items = new List<string> { "Test başarılı 1 , test baarılı 2"}
+
+            };
+
+
+
+
+
+            return View("Info",model);
+
+        }
 
 
 

@@ -28,6 +28,7 @@ namespace MyOnlineNotesWebApp.ViewModels
             IsRedirecting = true;
             RedirectUrl = "/Home/Index";
             RedirectingTimeout = 10000;
+            Items = new List<T>();
         }
 
 

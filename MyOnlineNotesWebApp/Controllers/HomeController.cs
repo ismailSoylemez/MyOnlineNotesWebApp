@@ -86,10 +86,15 @@ namespace MyOnlineNotesWebApp.Controllers
 
             if (res.Errors.Count>0)
             {
-                // kullanıcıyı bir hata ekranına yönlendirmemiz gerekiyor todo:
-            }
-            
 
+                ErrorViewModel ErrornotifyObj = new ErrorViewModel()
+                {
+                    Title = "Hata Oluştu",
+                    Items = res.Errors,
+                };
+                return RedirectToAction("Error", ErrornotifyObj);
+
+            }
 
             return View(res.Result);
         }
@@ -151,9 +156,6 @@ namespace MyOnlineNotesWebApp.Controllers
                 //hata yoksa
                 return RedirectToAction("Index");
 
-
-
-
             }
 
 
@@ -197,8 +199,17 @@ namespace MyOnlineNotesWebApp.Controllers
                     return View(model);
                 }
 
+
+                //bu noktaya kadar geldiyse modeli oluştur ve ilgili view e gönder
+                OkViewModel notifyObj = new OkViewModel()
+                {
+                    Title = "Kayıt Başarılı",
+                    RedirectUrl = "/Home/Login",
+                };
+                notifyObj.Items.Add("Lütfen Eposta adresinize giderek hesabınızı aktive ediniz.");
+
                 //hata yoksa
-                return RedirectToAction("RegisterOk");
+                return View("Ok", notifyObj);
 
             }
 
@@ -207,13 +218,6 @@ namespace MyOnlineNotesWebApp.Controllers
 
             return View(model);
         }
-
-
-        public ActionResult RegisterOk()
-        {
-            return View();
-        }
-
 
 
 
@@ -227,52 +231,69 @@ namespace MyOnlineNotesWebApp.Controllers
 
             if (res.Errors.Count>0)
             {
+                // ?
                 TempData["errors"] = res.Errors;
-                return RedirectToAction("UserActivateCancel");
+
+                ErrorViewModel ErrornotifyObj = new ErrorViewModel()
+                {
+                    Title = "Geçersiz İşlem",
+                    Items = res.Errors,
+                };
+                return RedirectToAction("Error", ErrornotifyObj);
             }
 
 
-            return RedirectToAction("UserActivateOk");
-        }
-
-        public ActionResult UserActivateOk()
-        {
-            return View();
-        }
-
-        public ActionResult UserActivateCancel()
-        {
-            List<ErrorMessageObj> errors = null;
-            if (TempData["errors"]!=null)
+            //eğer işlem başarılıysa
+            OkViewModel OknotifyObj = new OkViewModel()
             {
-                 errors = TempData["errors"] as List<ErrorMessageObj>;
-            }
-
-            return View(errors);
-        }
-
-
-
-        public ActionResult TestNotify()
-        {
-
-            InfoViewModel model = new InfoViewModel()
-            {
-
-                Header = "yönlendirme",
-                Title = "okinfotest",
-                RedirectingTimeout = 3000,
-                Items = new List<string> { "Test başarılı 1 , test baarılı 2"}
-
+                Title = "Aktivasyon Başarılı",
+                RedirectUrl="/Home/Login",
             };
+            OknotifyObj.Items.Add("Hesabınız aktifleştirildi. Artık not paylaşımı yapabilirsiniz");
 
-
-
-
-
-            return View("Info",model);
-
+            return View("Ok", OknotifyObj);
         }
+
+
+
+        //public ActionResult UserActivateOk()
+        //{
+        //    return View();
+        //}
+
+        //public ActionResult UserActivateCancel()
+        //{
+        //    List<ErrorMessageObj> errors = null;
+        //    if (TempData["errors"]!=null)
+        //    {
+        //         errors = TempData["errors"] as List<ErrorMessageObj>;
+        //    }
+
+        //    return View(errors);
+        //}
+
+
+
+        //public ActionResult TestNotify()
+        //{
+
+        //    InfoViewModel model = new InfoViewModel()
+        //    {
+
+        //        Header = "yönlendirme",
+        //        Title = "okinfotest",
+        //        RedirectingTimeout = 3000,
+        //        Items = new List<string> { "Test başarılı 1 , test baarılı 2"}
+
+        //    };
+
+
+
+
+
+        //    return View("Info",model);
+
+        //}
 
 
 

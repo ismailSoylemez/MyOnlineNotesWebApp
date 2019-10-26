@@ -23,18 +23,17 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <style type="text/css">
-    .validation-summary-errors{
-        border:2px dotted black;
+    .validation-summary-errors {
+        border: 2px dotted black;
         background-color: brown;
-        border-radius:8px;
+        border-radius: 8px;
     }
 
-    .validation-summary-errors ul{
-        list-style:none;
-        padding:6px;
-        color:aliceblue
-    }
-
+        .validation-summary-errors ul {
+            list-style: none;
+            padding: 6px;
+            color: aliceblue
+        }
 </style>
 
 @using (Html.BeginForm())
@@ -53,16 +52,16 @@
                     </div>
                     <div class="group">
                         <label for="user" class="label">Email</label>
-                        @Html.TextBoxFor(m => m.EMail, new { @class = "form-control", placeholder = "Email", type="Email" })
+                        @Html.TextBoxFor(m => m.EMail, new { @class = "form-control", placeholder = "Email", type = "Email" })
                     </div>
 
                     <div class="group">
                         <label for="user" class="label">Password</label>
-                        @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = "Şifre" ,type="password"})
+                        @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = "Şifre", type = "password" })
                     </div>
                     <div class="group">
                         <label for="user" class="label">Password</label>
-                        @Html.TextBoxFor(m => m.RePassword, new { @class = "form-control", placeholder = "Şifre Tekrar"  ,type="password"})
+                        @Html.TextBoxFor(m => m.RePassword, new { @class = "form-control", placeholder = "Şifre Tekrar", type = "password" })
                     </div>
 
                     <div class="group">
@@ -73,5 +72,6 @@
             </div>
         </div>
     </div>
+
 
 }

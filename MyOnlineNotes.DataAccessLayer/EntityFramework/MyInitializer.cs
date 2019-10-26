@@ -27,7 +27,8 @@ namespace MyOnlineNotes.DataAccessLayer.EntityFramework
                 Password="123456",
                 CreatedOn=DateTime.Now,
                 ModifiedOn=DateTime.Now.AddMinutes(5),
-                ModifiedUsername="ismailsoylemez"
+                ModifiedUsername="ismailsoylemez",
+                ProfileImageFileName="DefaultProfileImage.png"
             };
 
             //standart user ekleme
@@ -43,7 +44,9 @@ namespace MyOnlineNotes.DataAccessLayer.EntityFramework
                 Password = "123456",
                 CreatedOn = DateTime.Now,
                 ModifiedOn = DateTime.Now.AddMinutes(65),
-                ModifiedUsername = "ismailsoylemez"
+                ModifiedUsername = "ismailsoylemez",
+                ProfileImageFileName = "DefaultProfileImage.png"
+
             };
             context.OnlineNoteUser.Add(admin);
             context.OnlineNoteUser.Add(standartuser);
@@ -63,7 +66,9 @@ namespace MyOnlineNotes.DataAccessLayer.EntityFramework
                     Password = "123",
                     CreatedOn = FakeData.DateTimeData.GetDatetime(DateTime.Now.AddYears(-1), DateTime.Now),
                     ModifiedOn = FakeData.DateTimeData.GetDatetime(DateTime.Now.AddYears(-1), DateTime.Now),
-                    ModifiedUsername = $"user{i}"
+                    ModifiedUsername = $"user{i}",
+                    ProfileImageFileName = "DefaultProfileImage.png"
+
                 };
                 context.OnlineNoteUser.Add(user);
             }

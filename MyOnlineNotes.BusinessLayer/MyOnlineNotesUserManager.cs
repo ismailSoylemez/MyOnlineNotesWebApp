@@ -79,6 +79,21 @@ namespace MyOnlineNotes.BusinessLayer
         }
 
 
+
+        public BusinessLayerResult<OnlineNoteUser> GetUserById(int id)
+        {
+            BusinessLayerResult<OnlineNoteUser> res = new BusinessLayerResult<OnlineNoteUser>();
+
+            res.Result = repo_user.Find(x => x.Id == id);
+
+            if (res.Result == null)
+            {
+                res.AddError(ErrorMessageCode.UserNotFound, "Kullanıcı Bulunamadı");
+            }
+
+            return res;
+        }
+
         public BusinessLayerResult<OnlineNoteUser> LoginUser (LoginViewModel data)
         {
             //giriş kontrolü 

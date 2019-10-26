@@ -31,6 +31,8 @@ namespace MyOnlineNotesEntities
         [Required]
         public Guid ActivatedGuid { get; set; }
 
+        [StringLength(30)]   //images/user_12.jpg
+        public string ProfileImageFileName { get; set; }
 
 
         public virtual List<Note> Notes { get; set; }

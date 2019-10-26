@@ -1,0 +1,68 @@
+﻿@using MyOnlineNotesEntities
+@model  OnlineNoteUser
+
+@{
+    ViewBag.Title = "Kullanıcı Profili";
+}
+
+    <head>
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+        <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <div class="row">
+                <h2>Kullanıcı Profili</h2>
+                <hr />
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-2">
+                    <img src="~/images/@Model.ProfileImageFileName" class="img-circle" width="128" height="128" />
+                </div>
+
+                <div class="col-md-8 text-center">
+                    <h3>@(Model.Name + " " + Model.Surname)</h3><br />
+                    <h6> <b>Username:</b>@Model.Username </h6>
+                    <h6> <b>Email:</b>@Model.Email </h6>
+                    <br />
+                    <h6> <a href="#">More...</a> </h6>
+                </div>
+
+
+                <div class="col-md-2 text-right">
+                    <div class="btn-group">
+                        <a href="@Url.Action("EditProfile")" class="mr-1"><span class="fas fa-user-edit">&nbsp;</span>Modify</a>
+                        <a href="@Url.Action("DeleteProfile")" class="" onclick="return confirm('Silmek istediğine emin misin ?')"><span  class="fas fa-user-times ml-4">&nbsp;</span>Delete</a>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+    </body>
+
+
+
+
+<script>
+    //sayfa yüklendiğinde footer elementini gizle
+    $(function () {
+
+        $("footer").hide();
+
+    });
+</script>

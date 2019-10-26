@@ -76,6 +76,40 @@ namespace MyOnlineNotesWebApp.Controllers
 
 
 
+        public ActionResult ShowProfile()
+        {
+            OnlineNoteUser currentUser = Session["login"] as OnlineNoteUser;
+
+            MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
+            BusinessLayerResult<OnlineNoteUser> res =  eum.GetUserById(currentUser.Id);
+
+            if (res.Errors.Count>0)
+            {
+                // kullanıcıyı bir hata ekranına yönlendirmemiz gerekiyor todo:
+            }
+            
+
+
+            return View(res.Result);
+        }
+
+        public ActionResult EditProfile()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult EditProfile(OnlineNoteUser user)
+        {
+            return View();
+        }
+        public ActionResult RemoveProfile()
+        {
+            return View();
+        }
+
+
+
 
 
         [HttpGet]

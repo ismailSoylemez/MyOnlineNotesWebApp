@@ -105,10 +105,67 @@ namespace MyOnlineNotesWebApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditProfile(OnlineNoteUser user)
+        public ActionResult EditProfile(OnlineNoteUser model, HttpPostedFileBase ProfileImage)
         {
-            return View();
+
+            if (ProfileImage != null && 
+                (ProfileImage.ContentType=="image/jpeg" ||
+                 ProfileImage.ContentType == "image/jpg" ||
+                 ProfileImage.ContentType == "image/png"))
+            {
+                //varsayılan kullanıcı foto yolu
+                string filename = $"user_{model.Id}.{ProfileImage.ContentType.Split('/')[1]}";
+
+                ProfileImage.SaveAs(Server.MapPath($"~/images/{filename}"));
+                model.ProfileImageFileName = filename;
+            }
+
+            MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
+            BusinessLayerResult<OnlineNoteUser> res = eum.UpdateProfile(model);
+
+            if (res.Errors.Count>0)
+            {
+                ErrorViewModel errNotifyObj = new ErrorViewModel()
+                {
+                    Items = res.Errors,
+                    Title = "Profil Güncelleme Başarısız",
+                    RedirectUrl = "/Home/EditProfile"
+                };
+
+                return View("Error", errNotifyObj);
+
+            }
+
+            Session["login"] = res.Result; //session güncellendi
+
+            return RedirectToAction("ShowProfile");
+
+
+
+
+
+            //Repository<OnlineNoteUser> repo_user = new Repository<OnlineNoteUser>();
+
+            //OnlineNoteUser res = repo_user.Find(x => x.Id == user.Id);
+
+            //if (res != null)
+            //{
+            //    res.Name = user.Name;
+            //    res.Surname = user.Surname;
+            //    res.Email = user.Email;
+            //    res.Username = user.Username;
+            //    res.Password = user.Password;
+
+            //}
+
+            //repo_user.Update(res);
+
+
         }
+
+
+
+
         public ActionResult RemoveProfile()
         {
             return View();

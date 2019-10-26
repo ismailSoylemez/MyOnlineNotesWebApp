@@ -48,7 +48,7 @@ namespace MyOnlineNotes.BusinessLayer
                     ActivatedGuid = Guid.NewGuid(),
                     IsActive=false,
                     IsAdmin=false,
-
+                    ProfileImageFileName="DefaultProfileImage.png"
                 });
                 if (dbResult > 0) //başarılıysa
                 {

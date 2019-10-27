@@ -101,7 +101,24 @@ namespace MyOnlineNotesWebApp.Controllers
 
         public ActionResult EditProfile()
         {
-            return View();
+            OnlineNoteUser currentUser = Session["login"] as OnlineNoteUser;
+
+            MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
+            BusinessLayerResult<OnlineNoteUser> res = eum.GetUserById(currentUser.Id);
+
+            if (res.Errors.Count > 0)
+            {
+
+                ErrorViewModel ErrornotifyObj = new ErrorViewModel()
+                {
+                    Title = "Hata Oluştu",
+                    Items = res.Errors,
+                };
+                return RedirectToAction("Error", ErrornotifyObj);
+
+            }
+
+            return View(res.Result);
         }
 
         [HttpPost]
@@ -115,6 +132,8 @@ namespace MyOnlineNotesWebApp.Controllers
             {
                 //varsayılan kullanıcı foto yolu
                 string filename = $"user_{model.Id}.{ProfileImage.ContentType.Split('/')[1]}";
+
+
 
                 ProfileImage.SaveAs(Server.MapPath($"~/images/{filename}"));
                 model.ProfileImageFileName = filename;

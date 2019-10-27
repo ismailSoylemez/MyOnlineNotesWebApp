@@ -178,6 +178,7 @@ namespace MyOnlineNotes.BusinessLayer
             res.Result.Name = data.Name;
             res.Result.Password = data.Password;
             res.Result.Surname = data.Surname;
+            
 
             if (string.IsNullOrEmpty(data.ProfileImageFileName) == false)
             {

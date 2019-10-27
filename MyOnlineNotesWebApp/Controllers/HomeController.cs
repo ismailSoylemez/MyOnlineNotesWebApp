@@ -1,4 +1,5 @@
 ﻿using MyOnlineNotes.BusinessLayer;
+using MyOnlineNotes.BusinessLayer.Results;
 using MyOnlineNotes.DataAccessLayer.EntityFramework;
 using MyOnlineNotesEntities;
 using MyOnlineNotesEntities.Messages;
@@ -16,7 +17,13 @@ namespace MyOnlineNotesWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        
+        private NoteManager noteManager = new NoteManager();
+        CategoryManager categoryManager = new CategoryManager();
+        MyOnlineNotesUserManager OnlineNoteUserManager = new MyOnlineNotesUserManager();
+
+
+
+
 
         public ActionResult Index()
         {
@@ -30,9 +37,10 @@ namespace MyOnlineNotesWebApp.Controllers
             //{
             //    return View(TempData["mm"] as List<Note>);
             //}
-
-            NoteManager nm = new NoteManager();
-            return View(nm.GetAllNote().OrderByDescending(x => x.ModifiedOn).ToList());//veriyi sqlden çektik tersten sıraladık
+            
+            //NoteManager nm = new NoteManager();
+            
+            return View(noteManager.ListQueryable().OrderByDescending(x => x.ModifiedOn).ToList());//veriyi sqlden çektik tersten sıraladık
             //return View(nm.GetAllNoteQueryable().OrderByDescending(x => x.ModifiedOn).ToList());//veriyi sqlden çektik sıraladık
         }
 
@@ -45,8 +53,7 @@ namespace MyOnlineNotesWebApp.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            CategoryManager cm = new CategoryManager();
-            Category cat = cm.GetCategoryById(id.Value);//
+            Category cat = categoryManager.Find(x=>x.Id==id.Value);//
 
             //Category bulunamadıysa..
             if (cat == null)
@@ -62,12 +69,7 @@ namespace MyOnlineNotesWebApp.Controllers
 
         public ActionResult MostLiked()
         {
-
-            NoteManager nm = new NoteManager();
-            return View("Index", nm.GetAllNote().OrderByDescending(x=>x.LikeCount).ToList());
-
-
-
+            return View("Index", noteManager.ListQueryable().OrderByDescending(x=>x.LikeCount).ToList());
         }
 
         public ActionResult About()
@@ -81,8 +83,7 @@ namespace MyOnlineNotesWebApp.Controllers
         {
             OnlineNoteUser currentUser = Session["login"] as OnlineNoteUser;
 
-            MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
-            BusinessLayerResult<OnlineNoteUser> res =  eum.GetUserById(currentUser.Id);
+            BusinessLayerResult<OnlineNoteUser> res = OnlineNoteUserManager.GetUserById(currentUser.Id);
 
             if (res.Errors.Count>0)
             {
@@ -103,8 +104,8 @@ namespace MyOnlineNotesWebApp.Controllers
         {
             OnlineNoteUser currentUser = Session["login"] as OnlineNoteUser;
 
-            MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
-            BusinessLayerResult<OnlineNoteUser> res = eum.GetUserById(currentUser.Id);
+            //MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
+            BusinessLayerResult<OnlineNoteUser> res = OnlineNoteUserManager.GetUserById(currentUser.Id);
 
             if (res.Errors.Count > 0)
             {
@@ -200,8 +201,8 @@ namespace MyOnlineNotesWebApp.Controllers
         {
             OnlineNoteUser currentUser = Session["login"] as OnlineNoteUser;
 
-            MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
-            BusinessLayerResult<OnlineNoteUser> res = eum.RemoveUserById(currentUser.Id);
+            //MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
+            BusinessLayerResult<OnlineNoteUser> res = OnlineNoteUserManager.RemoveUserById(currentUser.Id);
 
             if (res.Errors.Count>0)
             {
@@ -238,8 +239,8 @@ namespace MyOnlineNotesWebApp.Controllers
 
             if (ModelState.IsValid) //gelen model uygunsa
             {
-                MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
-                BusinessLayerResult<OnlineNoteUser> res = eum.LoginUser(model);
+                //MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
+                BusinessLayerResult<OnlineNoteUser> res = OnlineNoteUserManager.LoginUser(model);
 
                 if (res.Errors.Count>0) //hata vardır
                 {
@@ -292,8 +293,8 @@ namespace MyOnlineNotesWebApp.Controllers
             if (ModelState.IsValid)
             {
 
-                MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
-                BusinessLayerResult<OnlineNoteUser> res = eum.RegisterUser(model);
+                //MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
+                BusinessLayerResult<OnlineNoteUser> res = OnlineNoteUserManager.RegisterUser(model);
 
 
                 //hata varsa
@@ -332,8 +333,8 @@ namespace MyOnlineNotesWebApp.Controllers
         {
             //kullanıcı aktivasyonu sağlanacak
 
-            MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
-            BusinessLayerResult<OnlineNoteUser> res = eum.ActivatedUser(id);
+            //MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
+            BusinessLayerResult<OnlineNoteUser> res = OnlineNoteUserManager.ActivatedUser(id);
 
             if (res.Errors.Count>0)
             {
@@ -359,47 +360,6 @@ namespace MyOnlineNotesWebApp.Controllers
 
             return View("Ok", OknotifyObj);
         }
-
-
-
-        //public ActionResult UserActivateOk()
-        //{
-        //    return View();
-        //}
-
-        //public ActionResult UserActivateCancel()
-        //{
-        //    List<ErrorMessageObj> errors = null;
-        //    if (TempData["errors"]!=null)
-        //    {
-        //         errors = TempData["errors"] as List<ErrorMessageObj>;
-        //    }
-
-        //    return View(errors);
-        //}
-
-
-
-        //public ActionResult TestNotify()
-        //{
-
-        //    InfoViewModel model = new InfoViewModel()
-        //    {
-
-        //        Header = "yönlendirme",
-        //        Title = "okinfotest",
-        //        RedirectingTimeout = 3000,
-        //        Items = new List<string> { "Test başarılı 1 , test baarılı 2"}
-
-        //    };
-
-
-
-
-
-        //    return View("Info",model);
-
-        //}
 
 
 

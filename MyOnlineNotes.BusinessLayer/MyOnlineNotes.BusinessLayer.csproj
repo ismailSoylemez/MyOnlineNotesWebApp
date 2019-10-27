@@ -58,8 +58,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessLayerResult.cs" />
+    <Compile Include="Results\BusinessLayerResult.cs" />
     <Compile Include="CategoryManager.cs" />
+    <Compile Include="Abstract\ManagerBase.cs" />
     <Compile Include="MyOnlineNotesUserManager.cs" />
     <Compile Include="NoteManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,6 +70,10 @@
     <ProjectReference Include="..\MyOnlineNotes.Common\MyOnlineNotes.Common.csproj">
       <Project>{bfb3debc-162c-4a2f-91f4-48742a52d9c8}</Project>
       <Name>MyOnlineNotes.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyOnlineNotes.Core\MyOnlineNotes.Core.csproj">
+      <Project>{c275e535-dfca-436e-b270-a473e70b80bf}</Project>
+      <Name>MyOnlineNotes.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\MyOnlineNotes.DataAccessLayer\MyOnlineNotes.DataAccessLayer.csproj">
       <Project>{21a9c8a0-9585-444b-8c61-d9e822e5489d}</Project>

@@ -1,4 +1,5 @@
-﻿using MyOnlineNotes.DataAccessLayer.EntityFramework;
+﻿using MyOnlineNotes.BusinessLayer.Abstract;
+using MyOnlineNotes.DataAccessLayer.EntityFramework;
 using MyOnlineNotesEntities;
 using System;
 using System.Collections.Generic;
@@ -8,18 +9,9 @@ using System.Threading.Tasks;
 
 namespace MyOnlineNotes.BusinessLayer
 {
-    public class NoteManager
+    public class NoteManager : ManagerBase<Note>
     {
-        private Repository<Note> repo_note = new Repository<Note>();
 
-        public List<Note> GetAllNote()
-        {
-            return repo_note.List();
-        }
-        public IQueryable<Note> GetAllNoteQueryable()
-        {
-            return repo_note.ListQueryable();
-        }
 
     }
 }

@@ -3,7 +3,7 @@
 
 @{
     CategoryManager cm = new CategoryManager();
-    List<Category> list = cm.GetCategories();
+    List<Category> list = cm.List();
 
 
 }
@@ -13,7 +13,7 @@
 <h1 class="my-4">Kategoriler</h1>
 <div class="list-group">
 
-    <a href="@Url.Action("Index","Home")"   class="list-group-item"><span class="fas fa-arrow-circle-right mr-1"></span>Tümü</a>
+    <a href="@Url.Action("Index","Home")"   class="list-group-item active"><span class="fas fa-arrow-circle-right mr-1"></span>Tümü</a>
 
     @foreach (var cat in list)
     {

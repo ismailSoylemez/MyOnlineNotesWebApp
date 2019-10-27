@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MyOnlineNotes.BusinessLayer.Abstract;
+using MyOnlineNotes.BusinessLayer.Results;
 using MyOnlineNotes.Common.Helpers;
 using MyOnlineNotes.DataAccessLayer.EntityFramework;
 using MyOnlineNotesEntities;
@@ -11,9 +13,8 @@ using MyOnlineNotesEntities.ValueObject;
 
 namespace MyOnlineNotes.BusinessLayer
 {
-    public class MyOnlineNotesUserManager
+    public class MyOnlineNotesUserManager : ManagerBase<OnlineNoteUser>
     {
-        private Repository<OnlineNoteUser> repo_user = new Repository<OnlineNoteUser>();
 
 
         public BusinessLayerResult<OnlineNoteUser> RegisterUser (RegisterViewModel data)
@@ -22,7 +23,7 @@ namespace MyOnlineNotes.BusinessLayer
             //kullanıcı eposta kontrolü
             //kayıt işlemi
             //aktivasyon e postası gönderimi
-            OnlineNoteUser user = repo_user.Find(x => x.Username == data.Username || x.Email == data.EMail);
+            OnlineNoteUser user =Find(x => x.Username == data.Username || x.Email == data.EMail);
             BusinessLayerResult<OnlineNoteUser> res = new BusinessLayerResult<OnlineNoteUser>();
 
 
@@ -40,7 +41,7 @@ namespace MyOnlineNotes.BusinessLayer
             }
             else//eşleşen kullanıcı yoksa kullanıcıyı database ye ekleyecek
             {
-                int dbResult = repo_user.Insert(new OnlineNoteUser()
+                int dbResult = Insert(new OnlineNoteUser()
                 {
                     Username = data.Username,
                     Email = data.EMail,
@@ -53,7 +54,7 @@ namespace MyOnlineNotes.BusinessLayer
                 if (dbResult > 0) //başarılıysa
                 {
                     //kullanıcı insert olmuş demektir
-                    res.Result = repo_user.Find(x => x.Email == data.EMail && x.Username == data.Username);
+                    res.Result = Find(x => x.Email == data.EMail && x.Username == data.Username);
 
                     //TODO : aktivasyon maili atılacak
                     //layerResult.Result.ActivatedGuid();
@@ -82,7 +83,7 @@ namespace MyOnlineNotes.BusinessLayer
         {
             BusinessLayerResult<OnlineNoteUser> res = new BusinessLayerResult<OnlineNoteUser>();
 
-            res.Result = repo_user.Find(x => x.Id == id);
+            res.Result = Find(x => x.Id == id);
 
             if (res.Result == null)
             {
@@ -97,7 +98,7 @@ namespace MyOnlineNotes.BusinessLayer
             //giriş kontrolü 
             //hesap aktif mi ?
             BusinessLayerResult<OnlineNoteUser> res = new BusinessLayerResult<OnlineNoteUser>();
-            res.Result = repo_user.Find(x => x.Username == data.Username && x.Password == data.Password);
+            res.Result = Find(x => x.Username == data.Username && x.Password == data.Password);
 
 
 
@@ -123,7 +124,7 @@ namespace MyOnlineNotes.BusinessLayer
         public BusinessLayerResult<OnlineNoteUser> ActivatedUser(Guid activateId)
         {
             BusinessLayerResult<OnlineNoteUser> res = new BusinessLayerResult<OnlineNoteUser>();
-            res.Result = repo_user.Find(x => x.ActivatedGuid == activateId);
+            res.Result = Find(x => x.ActivatedGuid == activateId);
 
             if (res.Result != null)
             {
@@ -135,7 +136,7 @@ namespace MyOnlineNotes.BusinessLayer
 
                 //eğer aktif değilse
                 res.Result.IsActive = true;
-                repo_user.Update(res.Result);
+                Update(res.Result);
 
             }
             else
@@ -152,7 +153,7 @@ namespace MyOnlineNotes.BusinessLayer
         public BusinessLayerResult<OnlineNoteUser> UpdateProfile(OnlineNoteUser data)
         {
 
-            OnlineNoteUser db_user = repo_user.Find(x => x.Username == data.Username && x.Email == data.Email);
+            OnlineNoteUser db_user = Find(x => x.Username == data.Username && x.Email == data.Email);
             BusinessLayerResult<OnlineNoteUser> res = new BusinessLayerResult<OnlineNoteUser>();
 
             if (db_user!=null &&  db_user.Id != data.Id)
@@ -172,7 +173,7 @@ namespace MyOnlineNotes.BusinessLayer
 
 
             //hata yoksa
-            res.Result = repo_user.Find(x => x.Id == data.Id);
+            res.Result = Find(x => x.Id == data.Id);
             res.Result.Email = data.Email;
             res.Result.Username = data.Username;
             res.Result.Name = data.Name;
@@ -185,7 +186,7 @@ namespace MyOnlineNotes.BusinessLayer
                 res.Result.ProfileImageFileName = data.ProfileImageFileName;
             }
 
-            if (repo_user.Update(res.Result) == 0 )
+            if (Update(res.Result) == 0 )
             {
                 res.AddError(ErrorMessageCode.ProfileCouldNotUpdated, "Profil Güncellenemedi !");
             }
@@ -195,14 +196,14 @@ namespace MyOnlineNotes.BusinessLayer
 
         public BusinessLayerResult<OnlineNoteUser> RemoveUserById(int id)
         {
-            OnlineNoteUser user = repo_user.Find(x => x.Id == id);
+            OnlineNoteUser user = Find(x => x.Id == id);
             BusinessLayerResult<OnlineNoteUser> res = new BusinessLayerResult<OnlineNoteUser>();
 
 
             if (user != null)
             {
 
-                if (repo_user.Delete(user) == 0)
+                if (Delete(user) == 0)
                 {
                     res.AddError(ErrorMessageCode.UserCouldNotRemove, "Kullanıcı Silinemedi");
                     return res;

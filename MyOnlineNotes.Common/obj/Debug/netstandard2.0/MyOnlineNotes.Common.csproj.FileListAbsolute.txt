@@ -12,3 +12,16 @@ C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.Common\bin\Debug\n
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.Common\bin\Debug\netstandard2.0\System.Configuration.xml
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.Common\bin\Debug\netstandard2.0\System.Security.xml
 C:\Users\ismail\Desktop\Git\MyOnlineNotesWebApp\MyOnlineNotes.Common\obj\Debug\netstandard2.0\MyOnlineNotes.Common.csproj.CopyComplete
+C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotes.Common\bin\Debug\netstandard2.0\MyOnlineNotes.Common.deps.json
+C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotes.Common\bin\Debug\netstandard2.0\MyOnlineNotes.Common.dll
+C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotes.Common\bin\Debug\netstandard2.0\MyOnlineNotes.Common.pdb
+C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotes.Common\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotes.Common\bin\Debug\netstandard2.0\System.Security.dll
+C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotes.Common\bin\Debug\netstandard2.0\System.Configuration.xml
+C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotes.Common\bin\Debug\netstandard2.0\System.Security.xml
+C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotes.Common\obj\Debug\netstandard2.0\MyOnlineNotes.Common.csproj.CoreCompileInputs.cache
+C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotes.Common\obj\Debug\netstandard2.0\MyOnlineNotes.Common.AssemblyInfoInputs.cache
+C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotes.Common\obj\Debug\netstandard2.0\MyOnlineNotes.Common.AssemblyInfo.cs
+C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotes.Common\obj\Debug\netstandard2.0\MyOnlineNotes.Common.csproj.CopyComplete
+C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotes.Common\obj\Debug\netstandard2.0\MyOnlineNotes.Common.dll
+C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotes.Common\obj\Debug\netstandard2.0\MyOnlineNotes.Common.pdb

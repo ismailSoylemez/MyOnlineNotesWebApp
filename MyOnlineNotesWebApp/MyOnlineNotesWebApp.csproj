@@ -200,6 +200,11 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Home\EditProfile.cshtml" />
     <Content Include="Views\Shared\_PartialFooter.cshtml" />
+    <Content Include="Views\Category\Details.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Category\Delete.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -210,7 +215,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Categoryt\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
@@ -227,8 +231,12 @@
       <Project>{bfb3debc-162c-4a2f-91f4-48742a52d9c8}</Project>
       <Name>MyOnlineNotes.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MyOnlineNotes.Core\MyOnlineNotes.Core.csproj">
+      <Project>{c275e535-dfca-436e-b270-a473e70b80bf}</Project>
+      <Name>MyOnlineNotes.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyOnlineNotes.DataAccessLayer\MyOnlineNotes.DataAccessLayer.csproj">
-      <Project>{21A9C8A0-9585-444B-8C61-D9E822E5489D}</Project>
+      <Project>{21a9c8a0-9585-444b-8c61-d9e822e5489d}</Project>
       <Name>MyOnlineNotes.DataAccessLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\MyOnlineNotesEntities\MyOnlineNotesEntities.csproj">

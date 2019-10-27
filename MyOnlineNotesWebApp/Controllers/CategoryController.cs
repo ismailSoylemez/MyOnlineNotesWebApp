@@ -1,37 +1,121 @@
-﻿using System;
+﻿using MyOnlineNotes.BusinessLayer;
+using MyOnlineNotesEntities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using System.Net;
-using MyOnlineNotes.BusinessLayer;
-using MyOnlineNotesEntities;
 
 namespace MyOnlineNotesWebApp.Controllers
 {
     public class CategoryController : Controller
     {
-        // GET: Categoryt
-        //public ActionResult Select(int? id)
-        //{
-        //    //id si yoksa
-        //    if (id==null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
 
-        //    CategoryManager cm = new CategoryManager();
-        //    Category cat = cm.GetCategoryById(id.Value);//
+        private CategoryManager categoryManager = new CategoryManager();
 
-        //    //Category bulunamadıysa..
-        //    if (cat ==null)
-        //    {
-        //        return HttpNotFound();
-        //        //return RedirectToAction("Index", "Home");
-        //    }
 
-        //    TempData["mm"] = cat.Notes;
-        //    return RedirectToAction("Index", "Home");
-        //}
+        // GET: Category
+        public ActionResult Index()
+        {
+            return View(categoryManager.List());
+        }
+
+        // GET: Category/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id==null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Category category = categoryManager.Find(x=>x.Id == id.Value);
+            if (category == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(category);
+        }
+
+        // GET: Category/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Category/Create
+        [HttpPost]
+        public ActionResult Create(Category category)
+        {
+            if (ModelState.IsValid)
+            {
+                categoryManager.Insert(category);
+                return RedirectToAction("Index");
+
+            }
+
+            return View(category);
+
+            
+        }
+
+        // GET: Category/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Category category = categoryManager.Find(x => x.Id == id.Value);
+            if (category == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(category);
+        }
+
+        // POST: Category/Edit/5
+        [HttpPost]
+        public ActionResult Edit(Category category)
+        {
+            if (ModelState.IsValid)
+            {
+
+                // TODO : İNCELE
+                categoryManager.Update(category);
+                return RedirectToAction("Index");
+
+            }
+
+            return View(category);
+
+        }
+
+        // GET: Category/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Category category = categoryManager.Find(x => x.Id == id.Value);
+            if (category == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(category);
+        }
+
+        // POST: Category/Delete/5
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            Category category = categoryManager.Find(x => x.Id == id);
+            categoryManager.Delete(category);
+            return RedirectToAction("Index");
+
+        }
     }
 }

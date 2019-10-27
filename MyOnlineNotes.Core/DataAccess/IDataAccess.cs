@@ -5,9 +5,9 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyOnlineNotes.DataAccessLayer.Abstract
+namespace MyOnlineNotes.Core.DataAccess
 {
-    public interface IRepository<T>
+    public interface IDataAccess<T>
     {
 
          List<T> List();

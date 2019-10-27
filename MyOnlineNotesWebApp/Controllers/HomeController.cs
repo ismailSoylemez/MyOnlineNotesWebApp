@@ -125,39 +125,50 @@ namespace MyOnlineNotesWebApp.Controllers
         public ActionResult EditProfile(OnlineNoteUser model, HttpPostedFileBase ProfileImage)
         {
 
-            if (ProfileImage != null && 
-                (ProfileImage.ContentType=="image/jpeg" ||
-                 ProfileImage.ContentType == "image/jpg" ||
-                 ProfileImage.ContentType == "image/png"))
+            //eğer böyle bir item varsa siler sonra kontrol yapar
+            ModelState.Remove("ModifiedUsername");
+
+            if (ModelState.IsValid)
             {
-                //varsayılan kullanıcı foto yolu
-                string filename = $"user_{model.Id}.{ProfileImage.ContentType.Split('/')[1]}";
 
-
-
-                ProfileImage.SaveAs(Server.MapPath($"~/images/{filename}"));
-                model.ProfileImageFileName = filename;
-            }
-
-            MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
-            BusinessLayerResult<OnlineNoteUser> res = eum.UpdateProfile(model);
-
-            if (res.Errors.Count>0)
-            {
-                ErrorViewModel errNotifyObj = new ErrorViewModel()
+                if (ProfileImage != null &&
+                    (ProfileImage.ContentType == "image/jpeg" ||
+                     ProfileImage.ContentType == "image/jpg" ||
+                     ProfileImage.ContentType == "image/png"))
                 {
-                    Items = res.Errors,
-                    Title = "Profil Güncelleme Başarısız",
-                    RedirectUrl = "/Home/EditProfile"
-                };
+                    //varsayılan kullanıcı foto yolu
+                    string filename = $"user_{model.Id}.{ProfileImage.ContentType.Split('/')[1]}";
 
-                return View("Error", errNotifyObj);
 
+
+                    ProfileImage.SaveAs(Server.MapPath($"~/images/{filename}"));
+                    model.ProfileImageFileName = filename;
+                }
+
+                MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
+                BusinessLayerResult<OnlineNoteUser> res = eum.UpdateProfile(model);
+
+                if (res.Errors.Count > 0)
+                {
+                    ErrorViewModel errNotifyObj = new ErrorViewModel()
+                    {
+                        Items = res.Errors,
+                        Title = "Profil Güncelleme Başarısız",
+                        RedirectUrl = "/Home/EditProfile"
+                    };
+
+                    return View("Error", errNotifyObj);
+
+                }
+
+                Session["login"] = res.Result; //session güncellendi
+
+                return RedirectToAction("ShowProfile");
             }
 
-            Session["login"] = res.Result; //session güncellendi
 
-            return RedirectToAction("ShowProfile");
+            return View(model);
+
 
 
 

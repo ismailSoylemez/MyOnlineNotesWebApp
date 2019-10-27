@@ -27,10 +27,10 @@
                     <img src="~/images/@Model.ProfileImageFileName" class="img-circle" width="128" height="128" />
                 </div>
 
-                <div class="col-md-8 text-center">
+                <div class="col-md-10 text-center">
                     <h3>@(Model.Name + " " + Model.Surname)</h3><br />
-                    <h6> <b>Username:</b>@Model.Username </h6>
-                    <h6> <b>Email:</b>@Model.Email </h6>
+                    <h5> <b>@Html.DisplayNameFor(model=>model.Username) : </b>@Model.Username </h5>
+                    <h5> <b>@Html.DisplayNameFor(model => model.Email) : </b>@Model.Email </h5>
                     <br />
                     <h6> <a href="#">More...</a> </h6>
                 </div>

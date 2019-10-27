@@ -185,9 +185,28 @@ namespace MyOnlineNotesWebApp.Controllers
 
 
 
-        public ActionResult RemoveProfile()
+        public ActionResult DeleteProfile()
         {
-            return View();
+            OnlineNoteUser currentUser = Session["login"] as OnlineNoteUser;
+
+            MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
+            BusinessLayerResult<OnlineNoteUser> res = eum.RemoveUserById(currentUser.Id);
+
+            if (res.Errors.Count>0)
+            {
+                ErrorViewModel errNotifyObj = new ErrorViewModel()
+                {
+                    Items = res.Errors,
+                    Title = "Profil Silinemedi",
+                    RedirectUrl = "/Home/ShowProfile"
+                };
+                return View("Error", errNotifyObj);
+            }
+
+            Session.Clear();
+
+            return RedirectToAction("Index");
+
         }
 
 

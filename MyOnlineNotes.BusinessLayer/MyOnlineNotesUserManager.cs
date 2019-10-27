@@ -193,9 +193,30 @@ namespace MyOnlineNotes.BusinessLayer
             return res;
         }
 
+        public BusinessLayerResult<OnlineNoteUser> RemoveUserById(int id)
+        {
+            OnlineNoteUser user = repo_user.Find(x => x.Id == id);
+            BusinessLayerResult<OnlineNoteUser> res = new BusinessLayerResult<OnlineNoteUser>();
 
 
+            if (user != null)
+            {
+
+                if (repo_user.Delete(user) == 0)
+                {
+                    res.AddError(ErrorMessageCode.UserCouldNotRemove, "Kullanıcı Silinemedi");
+                    return res;
+                }
+            }
+
+            else
+            {
+                res.AddError(ErrorMessageCode.UserCouldNotFind, "Kullanıcı Bulunamadı");
+            }
+
+            return res;
 
 
+        }
     }
 }

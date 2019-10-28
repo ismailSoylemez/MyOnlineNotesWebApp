@@ -4,55 +4,80 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>Category</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedOn)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CreatedOn)
-        </dd>
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <h1>Details</h1>
+        </div>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ModifiedOn)
-        </dt>
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <h4>Category</h4>
+            <hr />
 
-        <dd>
-            @Html.DisplayFor(model => model.ModifiedOn)
-        </dd>
+            <div class="col-md-10 offset-1">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.CreatedOn)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ModifiedUsername)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.CreatedOn)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ModifiedUsername)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ModifiedOn)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.ModifiedOn)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ModifiedUsername)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.ModifiedUsername)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </dt>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                    <dd>
+                        @Html.DisplayFor(model => model.Title)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Description)
+                    </dd>
+
+                    <br />
+
+                    <a href="/Category/Edit/@Model.Id" class="btn btn-sm btn-warning" title="Edit">
+                        <span class="fas fa-plus-square mr-1"></span>Edit
+                    </a>
+                    <a href="/Category/Index" class="btn btn-sm btn-danger">
+                        <span class=""></span>Back to List
+                    </a>
+
+                </dl>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+

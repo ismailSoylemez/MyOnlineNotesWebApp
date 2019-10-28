@@ -51,31 +51,6 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             @* Menü *@
-        <div class="dropdown">
-            @if (user != null)
-            {
-                <li class="dropdown">
-                    <a href="/Note/MyNotes" class="dropdown-toggle btn btn-danger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="fas fa-wrench mr-1"></span>
-                        Yönetim
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/Note/AddNew"><span class=""></span>Not Ekle</a></li>
-                        <li role="separator" class="dropdown-divider"><a href="#"></a></li>
-                        <li><a href="/Note/MyNotes"><span class=""></span>Notlarım</a></li>
-                        <li><a href="/Note/MyLikedNotes"><span class=""></span>Beğendiklerim</a></li>
-
-                        @if (user.IsAdmin)
-                        {
-                            <li role="separator" class="dropdown-divider"><a href="#"></a></li>
-                            <li><a href="/Category/AddNew"><span class=""></span>Kategori Ekle</a></li>
-                            <li><a href="/Category/List"><span class=""></span>Kategoriler</a></li>
-                        }
-                    </ul>
-                </li>
-            }
-        </div>
             <div class="collapse navbar-collapse ml-2" id="navbarResponsive">
                 <ul class="navbar-nav float-md-left">
                     <li class="nav-item">
@@ -95,11 +70,36 @@
                     </li>
                 </ul>
             </div>
+            <div class="dropdown mr-1">
+                @if (user != null)
+                {
+                    <li class="dropdown">
+                        <a href="/Note/MyNotes" class="dropdown-toggle btn btn-danger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="fas fa-wrench mr-1"></span>
+                            Yönetim
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Note/AddNew"><span class=""></span>Not Ekle</a></li>
+                            <li role="separator" class="dropdown-divider"><a href="#"></a></li>
+                            <li><a href="/Note/MyNotes"><span class=""></span>Notlarım</a></li>
+                            <li><a href="/Note/MyLikedNotes"><span class=""></span>Beğendiklerim</a></li>
+
+                            @if (user.IsAdmin)
+                            {
+                                <li role="separator" class="dropdown-divider"><a href="#"></a></li>
+                                <li><a href="/Category/Create"><span class=""></span>Kategori Ekle</a></li>
+                                <li><a href="/Category/Index"><span class=""></span>Kategoriler</a></li>
+                            }
+                        </ul>
+                    </li>
+                }
+            </div>
 
 
 
             @* Login *@
-            <div class="btn-group">
+            <div class="btn-group mr-2">
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Üye Ol / Giriş Yap
                 </button>

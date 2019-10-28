@@ -47,6 +47,12 @@ namespace MyOnlineNotesWebApp.Controllers
         [HttpPost]
         public ActionResult Create(Category category)
         {
+            ModelState.Remove("CreatedOn");
+            ModelState.Remove("ModifiedOn");
+            ModelState.Remove("ModifiedUserName");
+
+
+
             if (ModelState.IsValid)
             {
                 categoryManager.Insert(category);
@@ -79,8 +85,15 @@ namespace MyOnlineNotesWebApp.Controllers
         [HttpPost]
         public ActionResult Edit(Category category)
         {
+            ModelState.Remove("CreatedOn");
+            ModelState.Remove("ModifiedOn");
+            ModelState.Remove("ModifiedUserName");
             if (ModelState.IsValid)
             {
+                Category cat = categoryManager.Find(x => x.Id == category.Id);
+                cat.Title = category.Title;
+                cat.Description = category.Description;
+
 
                 // TODO : İNCELE
                 categoryManager.Update(category);

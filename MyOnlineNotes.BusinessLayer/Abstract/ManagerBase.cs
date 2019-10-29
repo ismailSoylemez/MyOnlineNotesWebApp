@@ -15,10 +15,15 @@ namespace MyOnlineNotes.BusinessLayer.Abstract
         private Repository<T> repo = new Repository<T>();
 
 
-        public int Delete(T obj)
+
+
+
+        public  int Delete(T obj)
         {
             return repo.Delete(obj);
         }
+
+  
 
         public T Find(System.Linq.Expressions.Expression<Func<T, bool>> where)
         {

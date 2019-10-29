@@ -25,5 +25,56 @@ namespace MyOnlineNotes.DataAccessLayer.EntityFramework
 
         //connectionstringi el ile web configde oluştur
 
+
+
+        //tablolar oluşmadan önce araya girer
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            //Fluent API yöntemi
+
+            //note tablosu comment ile 1 e çok
+            modelBuilder.Entity<Note>()
+                .HasMany(n => n.Comments)
+                .WithRequired(c => c.Note) //bir commentin notu olmak zorundadır
+                .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<Note>()
+                .HasMany(n => n.Likes)
+                .WithRequired(c => c.Note) //bir like ın notu olmak zorundadır
+                .WillCascadeOnDelete(true);
+
+
+                
+
+
+            //user delete
+            //modelBuilder.Entity<OnlineNoteUser>()
+            //    .HasMany(n => n.Comments)
+            //    .WithRequired(c => c.Owner)
+            //    .WillCascadeOnDelete(true);
+            //modelBuilder.Entity<OnlineNoteUser>()
+            //    .HasMany(n => n.Likes)
+            //    .WithRequired(c => c.LikedUser)
+            //    .WillCascadeOnDelete(true);
+            //modelBuilder.Entity<OnlineNoteUser>()
+            //   .HasMany(n => n.Notes)
+            //   .WithRequired(c => c.Owner)
+            //   .WillCascadeOnDelete(true);
+
+
+
+
+
+            //modelBuilder.Entity<OnlineNoteUser>()
+            //    .HasMany(n => n.Notes)
+            //    .WithRequired(c => c.Owner)
+            //    .WillCascadeOnDelete(true);
+
+
+
+
+
+        }
+
     }
 }

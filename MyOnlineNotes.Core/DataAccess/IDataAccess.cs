@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyOnlineNotes.Core.DataAccess
 {
-    public interface IDataAccess<T>
+    public  interface IDataAccess<T>
     {
 
          List<T> List();
@@ -24,8 +24,6 @@ namespace MyOnlineNotes.Core.DataAccess
          int Save();
 
          T Find(Expression<Func<T, bool>> where);
-
-
 
     }
 }

@@ -112,22 +112,9 @@ namespace MyOnlineNotes.DataAccessLayer.EntityFramework
             return _objectSet.FirstOrDefault(where);
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        public int Delete(Category obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

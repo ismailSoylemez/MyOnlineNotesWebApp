@@ -11,10 +11,5 @@ namespace MyOnlineNotes.BusinessLayer
     public class CategoryManager : ManagerBase<Category>
     {
 
-
-
-
-
-
     }
 }

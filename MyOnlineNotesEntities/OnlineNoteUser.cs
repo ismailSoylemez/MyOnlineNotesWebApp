@@ -25,14 +25,16 @@ namespace MyOnlineNotesEntities
         [Required, StringLength(25), DisplayName("Şifre")]
         public string Password { get; set; }
 
-
+        [DisplayName("Is Active")]
         public bool IsActive { get; set; }
+
+        [DisplayName("Is Admin")]
         public bool IsAdmin { get; set; }
 
-        [Required]
+        [Required,ScaffoldColumn(false)]
         public Guid ActivatedGuid { get; set; }
 
-        [StringLength(30)]   //images/user_12.jpg
+        [StringLength(30), ScaffoldColumn(false)]   //images/user_12.jpg
         public string ProfileImageFileName { get; set; }
 
 

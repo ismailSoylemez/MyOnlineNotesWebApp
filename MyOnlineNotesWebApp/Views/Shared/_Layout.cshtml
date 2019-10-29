@@ -80,16 +80,34 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="/Note/AddNew"><span class=""></span>Not Ekle</a></li>
+                            <li>
+                                @BootstrapHelper.LinkMenu("/Note/AddNew","fas fa-plus-square","Not Ekle")
+                           </li>
                             <li role="separator" class="dropdown-divider"><a href="#"></a></li>
-                            <li><a href="/Note/MyNotes"><span class=""></span>Notlarım</a></li>
-                            <li><a href="/Note/MyLikedNotes"><span class=""></span>Beğendiklerim</a></li>
+                            <li>
+                                @BootstrapHelper.LinkMenu("/Note/MyNotes", "fas fa-clipboard", "Notlarım")
+                            </li>
+
+                            <li>
+                                @BootstrapHelper.LinkMenu("/Note/MyLikedNotes", "fas fa-heart", "Beğendiklerim")
+                            </li>
 
                             @if (user.IsAdmin)
                             {
                                 <li role="separator" class="dropdown-divider"><a href="#"></a></li>
-                                <li><a href="/Category/Create"><span class=""></span>Kategori Ekle</a></li>
-                                <li><a href="/Category/Index"><span class=""></span>Kategoriler</a></li>
+                                <li>
+                                    @BootstrapHelper.LinkMenu("/Category/Create", "fas fa-plus-square", "Kategori Ekle")
+                                </li>
+                                <li>
+                                    @BootstrapHelper.LinkMenu("/Category/Index", "fas fa-list-alt", "Kategoriler")
+                                </li>
+                                <li role="separator" class="dropdown-divider"><a href="#"></a></li>
+                                <li>
+                                    @BootstrapHelper.LinkMenu("/MyOnlineNoteUser/Create", "fas fa-plus-square", "Kullanıcı Ekle")
+                                </li>
+                                <li>
+                                    @BootstrapHelper.LinkMenu("/MyOnlineNoteUser/Index", "fas fa-users", "Kullanıcılar")
+                                </li>
                             }
                         </ul>
                     </li>

@@ -1,8 +1,5 @@
 ﻿
 
-
-
-
 @helper LinkButton(string id = "", string url = "", string color = "", string addtioanalClass = "", string title = "", string icon = "", string text = "")
 {
     <a href="@url" id="@id" name="@id" class="btn btn-@color @addtioanalClass" title="@title">
@@ -32,4 +29,13 @@
     <button type="@typ" class="btn btn-@color @addtioanalClass">
         <span class="@icon mr-1"></span>@text
     </button>
+}
+
+
+@helper LinkMenu(string url="",string icon="",string text="")
+{ 
+    <a href="@url">
+        <span class="@icon + ml-2"></span>
+            @text
+    </a>
 }

@@ -1,0 +1,35 @@
+﻿
+
+
+
+
+@helper LinkButton(string id = "", string url = "", string color = "", string addtioanalClass = "", string title = "", string icon = "", string text = "")
+{
+    <a href="@url" id="@id" name="@id" class="btn btn-@color @addtioanalClass" title="@title">
+        <span class="@icon mr-1"></span>@text
+    </a>
+}
+
+@helper LinkButton(string url = "", string color = "", string addtioanalClass = "", string title = "", string icon = "", string text = "")
+{
+    <a href="@url" class="btn btn-@color @addtioanalClass" title="@title">
+        <span class="@icon mr-1"></span>@text
+    </a>
+}
+
+
+@helper Button(string id = "", string color = "", string addtioanalClass = "", string typ = "button", string icon = "", string text = "")
+{
+
+    <button type="@typ" id="@id" name="@id" class="btn btn-@color @addtioanalClass">
+        <span class="@icon mr-1"></span>@text
+    </button>
+}
+
+@helper Button(string color = "", string addtioanalClass = "", string typ = "button", string icon = "", string text = "")
+{
+
+    <button type="@typ" class="btn btn-@color @addtioanalClass">
+        <span class="@icon mr-1"></span>@text
+    </button>
+}

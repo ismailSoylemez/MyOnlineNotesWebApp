@@ -61,12 +61,11 @@
 
                     <br />
 
-                    <a href="/Category/Edit/@Model.Id" class="btn btn-sm btn-warning" title="Edit">
-                        <span class="fas fa-plus-square mr-1"></span>Edit
-                    </a>
-                    <a href="/Category/Index" class="btn btn-sm btn-danger">
-                        <span class=""></span>Back to List
-                    </a>
+  
+
+
+                    @BootstrapHelper.LinkButton("/Category/Edit/"+Model.Id, "warning", string.Empty, string.Empty, "fas fa-plus-square", "Edit")
+                    @BootstrapHelper.LinkButton("/Category/Index/", "info", string.Empty, string.Empty, "fas fa-arrow-left", "Listeye Dön")
 
                 </dl>
             </div>

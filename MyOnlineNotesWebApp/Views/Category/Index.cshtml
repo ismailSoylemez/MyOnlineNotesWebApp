@@ -1,8 +1,12 @@
-﻿@model IEnumerable<MyOnlineNotesEntities.Category>
+﻿@using MyOnlineNotesWebApp
+
+@model IEnumerable<MyOnlineNotesEntities.Category>
 
 @{
     ViewBag.Title = "Kategoriler";
 }
+
+
 
 
     <div class="row">
@@ -57,17 +61,26 @@
                             @Html.DisplayFor(modelItem => item.Description)
                         </td>
                         <td>
-                            <a href="/Category/Edit/@item.Id" class="btn btn-sm btn-warning" title="Edit">
-                                <span class="fas fa-edit"></span>
-                            </a>
 
-                            <a href="/Category/Details/@item.Id" class="btn btn-sm btn-info" title="Details">
-                                <span class="fas fa-search "></span>
-                            </a>
+                            <!-- Butonları her seferinde tek tek oluşturmak yerine BootstrapHelper classımı kullanarak oluşturuyorum bu sayede merkezileştirme işlemi sağlanmış oluyor -->
+                            @BootstrapHelper.LinkButton("/Category/Edit/"+item.Id, "warning", " btn-sm", "Edit", "fas fa-edit", string.Empty)
+                            @BootstrapHelper.LinkButton("/Category/Details/"+item.Id, "info", " btn-sm", "Details", "fas fa-search", string.Empty)
+                            @BootstrapHelper.LinkButton("/Category/Delete/"+item.Id, "danger", " btn-sm", "Delete", "fas fa-trash-alt", string.Empty)
 
-                            <a href="/Category/Delete/@item.Id" class="btn btn-sm btn-danger" title="Delete">
-                                <span class="fas fa-trash-alt"></span>
-                            </a>
+
+                            @*
+                                <a href= class="btn btn-sm btn-warning" title="Edit">
+                                    <span class="fas fa-edit"></span>
+                                </a>
+
+                                <a href="/Category/Details/@item.Id" class="btn btn-sm btn-" title="Details">
+                                    <span class="fas fa-search "></span>
+                                </a>
+
+                                <a href="/Category/Delete/@item.Id" class="btn btn-sm btn-danger" title="Delete">
+                                    <span class="fas fa-trash-alt"></span>
+                                </a>
+                            *@
 
                         </td>
                     </tr>

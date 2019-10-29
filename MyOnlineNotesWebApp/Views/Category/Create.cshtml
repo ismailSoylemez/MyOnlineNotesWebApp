@@ -44,10 +44,9 @@
 
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <button type="submit" class="btn btn-success">
-                                <span></span> Create
-                            </button>
-                            @Html.ActionLink("Back to List", "Index","Category",null,new { @class = "btn btn-info"  })
+
+                            @BootstrapHelper.Button("success",string.Empty,"submit","fas fa-plus-square","Create")
+                            @BootstrapHelper.LinkButton("/Category/Index/", "info", string.Empty, string.Empty, "fas fa-arrow-left", "Listeye Dön")
                         </div>
                     </div>
                 </div>

@@ -17,7 +17,7 @@ namespace MyOnlineNotes.BusinessLayer
     {
 
 
-        public BusinessLayerResult<OnlineNoteUser> RegisterUser (RegisterViewModel data)
+        public  BusinessLayerResult<OnlineNoteUser> RegisterUser (RegisterViewModel data)
         {
             //kullanıcı username kontrolü 
             //kullanıcı eposta kontrolü
@@ -41,7 +41,7 @@ namespace MyOnlineNotes.BusinessLayer
             }
             else//eşleşen kullanıcı yoksa kullanıcıyı database ye ekleyecek
             {
-                int dbResult = Insert(new OnlineNoteUser()
+                int dbResult = base.Insert(new OnlineNoteUser()
                 {
                     Username = data.Username,
                     Email = data.EMail,
@@ -79,7 +79,9 @@ namespace MyOnlineNotes.BusinessLayer
 
         }
 
-        public BusinessLayerResult<OnlineNoteUser> GetUserById(int id)
+
+
+        public  BusinessLayerResult<OnlineNoteUser> GetUserById(int id)
         {
             BusinessLayerResult<OnlineNoteUser> res = new BusinessLayerResult<OnlineNoteUser>();
 
@@ -93,7 +95,7 @@ namespace MyOnlineNotes.BusinessLayer
             return res;
         }
 
-        public BusinessLayerResult<OnlineNoteUser> LoginUser (LoginViewModel data)
+        public  BusinessLayerResult<OnlineNoteUser> LoginUser (LoginViewModel data)
         {
             //giriş kontrolü 
             //hesap aktif mi ?
@@ -121,7 +123,7 @@ namespace MyOnlineNotes.BusinessLayer
 
         }
 
-        public BusinessLayerResult<OnlineNoteUser> ActivatedUser(Guid activateId)
+        public  BusinessLayerResult<OnlineNoteUser> ActivatedUser(Guid activateId)
         {
             BusinessLayerResult<OnlineNoteUser> res = new BusinessLayerResult<OnlineNoteUser>();
             res.Result = Find(x => x.ActivatedGuid == activateId);
@@ -150,7 +152,7 @@ namespace MyOnlineNotes.BusinessLayer
 
         }
 
-        public BusinessLayerResult<OnlineNoteUser> UpdateProfile(OnlineNoteUser data)
+        public  BusinessLayerResult<OnlineNoteUser> UpdateProfile(OnlineNoteUser data)
         {
 
             OnlineNoteUser db_user = Find(x => x.Username == data.Username && x.Email == data.Email);
@@ -194,7 +196,7 @@ namespace MyOnlineNotes.BusinessLayer
             return res;
         }
 
-        public BusinessLayerResult<OnlineNoteUser> RemoveUserById(int id)
+        public  BusinessLayerResult<OnlineNoteUser> RemoveUserById(int id)
         {
             OnlineNoteUser user = Find(x => x.Id == id);
             BusinessLayerResult<OnlineNoteUser> res = new BusinessLayerResult<OnlineNoteUser>();
@@ -219,5 +221,61 @@ namespace MyOnlineNotes.BusinessLayer
 
 
         }
+
+
+
+
+        // user insert update için abstract sınıf olan managerbaseden miras alıp değiştireceğiz çünkü şuanki insert metodu kullanıcıyı direkt olarak insert ediyor içinde kontrol yapamıyorum.
+        // benim insert metodum geriye int dönüyor bunu istemiyorum.
+
+
+        //istediğim tipi dönen insert yazıyorum
+        //new verdiğimiz zaman bu metodu gizleriz 
+        public  new BusinessLayerResult<OnlineNoteUser> Insert(OnlineNoteUser data)
+        {
+            //method gizleme,
+
+
+            OnlineNoteUser user = Find(x => x.Username == data.Username || x.Email == data.Email);
+            BusinessLayerResult<OnlineNoteUser> res = new BusinessLayerResult<OnlineNoteUser>();
+
+            res.Result = data;
+
+            if (user != null)
+            {
+                //birden fazla hata mesajı ekleyebileceğim bir yapı oluşturdum
+                if (user.Username == data.Username)
+                {
+                    res.AddError(ErrorMessageCode.UsernameAlreadyExist, "Kullanıcı adı kayıtlı");
+                }
+                if (user.Email == data.Email)
+                {
+                    res.AddError(ErrorMessageCode.EmailAlreadyExist, "Email adresi kayıtlı");
+                }
+            }
+            else//eşleşen kullanıcı yoksa kullanıcıyı database ye ekleyecek
+            {
+                res.Result.ProfileImageFileName = "";
+                res.Result.ActivatedGuid = Guid.NewGuid();
+
+                if (base.Insert(res.Result)==0) // diğerleri varsayılan olarak zaten gelecek)
+                {
+                    res.AddError(ErrorMessageCode.UserCouldNotInserted, "Kullanıcı Eklenemedi");
+                }
+            }
+
+            //hatalar var layerresult geri döndürülür.
+            return res;
+
+
+
+
+
+        }
+
+
+
+
+
     }
 }

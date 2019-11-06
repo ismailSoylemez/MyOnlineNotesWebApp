@@ -1,4 +1,5 @@
 ﻿using MyOnlineNotes.BusinessLayer;
+using MyOnlineNotes.BusinessLayer.Results;
 using MyOnlineNotesEntities;
 using System;
 using System.Collections.Generic;
@@ -49,9 +50,21 @@ namespace MyOnlineNotesWebApp.Controllers
         [HttpPost]
         public ActionResult Create(OnlineNoteUser onlineNoteUser)
         {
+            //bu bilgieri kontrol etme
+            ModelState.Remove("CreatedOn");
+            ModelState.Remove("ModifiedOn");
+            ModelState.Remove("ModifiedUserName");
 
             if (ModelState.IsValid)
             {
+                BusinessLayerResult<OnlineNoteUser> res = myOnlineNotesUserManager.Insert(onlineNoteUser);
+
+                if (res.Errors.Count>0)
+                {
+                    res.Errors.ForEach(x => ModelState.AddModelError("", x.Message));
+                    return View(onlineNoteUser);
+                                    }
+
                 //insert yapmadan önce kontrol gerekli
                 return RedirectToAction("Index");
 
@@ -83,6 +96,10 @@ namespace MyOnlineNotesWebApp.Controllers
         [HttpPost]
         public ActionResult Edit(OnlineNoteUser onlineNoteUser)
         {
+            //bu bilgieri kontrol etme
+            ModelState.Remove("CreatedOn");
+            ModelState.Remove("ModifiedOn");
+            ModelState.Remove("ModifiedUserName");
 
             if (ModelState.IsValid)
             {

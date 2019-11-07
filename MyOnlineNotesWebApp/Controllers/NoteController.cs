@@ -16,6 +16,7 @@ namespace MyOnlineNotesWebApp.Controllers
 
         NoteManager noteManager = new NoteManager();
         CategoryManager categoryManager = new CategoryManager();
+        LikedManager likedManager = new LikedManager();
 
         public ActionResult Index()
         {
@@ -27,11 +28,23 @@ namespace MyOnlineNotesWebApp.Controllers
             var notes = noteManager.ListQueryable().Include("Category").Include("Owner").Where(x => x.Owner.Id == CurrentSession.User.Id).OrderByDescending(x=>x.ModifiedOn);
             
 
-
-
-
             return View(notes.ToList());
         }
+
+        public ActionResult MyLikedNotes()
+        {
+            //Linq sorgusu
+            var notes = likedManager.ListQueryable().Include("LikedUser")
+                .Include("Note")
+                .Where(x => x.LikedUser.Id == CurrentSession.User.Id)
+                .Select(x=>x.Note)
+                .Include("Category")
+                .Include("Owner")
+                .OrderByDescending(x=>x.ModifiedOn);
+
+            return View("Index", notes.ToList());
+        }
+
 
         public ActionResult Details(int? id)
         {

@@ -31,6 +31,7 @@ namespace MyOnlineNotesEntities
         [DisplayName("Beğenilme")]
         public int LikeCount { get; set; }
 
+        [DisplayName("Kategori")]
         public int CategoryId { get; set; }
 
         public virtual OnlineNoteUser Owner { get; set; }

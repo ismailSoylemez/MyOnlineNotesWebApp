@@ -4,63 +4,86 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>Note</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedOn)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreatedOn)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ModifiedOn)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ModifiedOn)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ModifiedUsername)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ModifiedUsername)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Text)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Text)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsDraft)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsDraft)
-        </dd>
-
-    </dl>
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <h1>Details</h1>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <h4>Category</h4>
+        <hr />
+
+        <div class="col-md-10 offset-1">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.CreatedOn)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CreatedOn)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ModifiedOn)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ModifiedOn)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ModifiedUsername)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ModifiedUsername)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Title)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Title)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Text)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Text)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.IsDraft)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.IsDraft)
+                </dd>
+
+
+                <br />
+
+
+
+
+                @BootstrapHelper.LinkButton("/Note/Edit/" + Model.Id, "warning", string.Empty, string.Empty, "fas fa-plus-square", "Edit")
+                @BootstrapHelper.LinkButton("/Note/Index/", "info", string.Empty, string.Empty, "fas fa-arrow-left", "Listeye Dön")
+
+
+            </dl>
+
+
+
+        </div>
+
+    </div>
+
+
+</div>
+

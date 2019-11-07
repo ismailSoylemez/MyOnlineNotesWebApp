@@ -1,0 +1,74 @@
+﻿@using MyOnlineNotesWebApp
+@model IEnumerable<MyOnlineNotesEntities.Note>
+
+@{
+    ViewBag.Title = "Notlarım";
+}
+
+
+<div class="row">
+    <div class="col-md-10 offset-1">
+        <h2>@ViewBag.Title</h2><hr />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-10 offset-1">
+        <p>
+            <a href="/Note/Create" class="btn btn-lg btn-primary">
+                <span class="fas fa-plus-square mr-1"></span>Create
+            </a>
+        </p>
+
+        <table class="table">
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Category.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Text)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsDraft)
+                </th>
+                <th> @Html.DisplayNameFor(model => model.LikeCount)</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDraft)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LikeCount)
+            </td>
+            <td>
+                @BootstrapHelper.LinkButton("/Note/Edit/" + item.Id, "warning", " btn-sm", "Edit", "fas fa-edit", string.Empty)
+                @BootstrapHelper.LinkButton("/Note/Details/" + item.Id, "info", " btn-sm", "Details", "fas fa-search", string.Empty)
+                @BootstrapHelper.LinkButton("/Note/Delete/" + item.Id, "danger", " btn-sm", "Delete", "fas fa-trash-alt", string.Empty)
+            </td>
+        </tr>
+            }
+
+        </table>
+
+
+    </div>
+</div>
+
+
+

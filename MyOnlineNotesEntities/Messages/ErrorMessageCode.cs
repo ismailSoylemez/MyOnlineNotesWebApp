@@ -15,7 +15,8 @@ namespace MyOnlineNotesEntities.Messages
         ProfileCouldNotUpdated = 157,
         UserCouldNotRemove = 158,
         UserCouldNotFind =159,
-        UserCouldNotInserted = 160
+        UserCouldNotInserted = 160,
+        UserCouldNotUpdated = 161
 
 
     }

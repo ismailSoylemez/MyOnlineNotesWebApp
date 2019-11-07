@@ -76,7 +76,7 @@ namespace MyOnlineNotesWebApp.Controllers
         // GET: User/Edit/5
         public ActionResult Edit(int? id)
         {
-
+            
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -103,10 +103,17 @@ namespace MyOnlineNotesWebApp.Controllers
 
             if (ModelState.IsValid)
             {
-                //insert yapmadan önce kontrol gerekli
+                BusinessLayerResult<OnlineNoteUser> res = myOnlineNotesUserManager.Update(onlineNoteUser);
+
+                if (res.Errors.Count > 0)
+                {
+                    res.Errors.ForEach(x => ModelState.AddModelError("", x.Message));
+                    return View(onlineNoteUser);
+                }
                 return RedirectToAction("Index");
 
             }
+
 
             return View(onlineNoteUser);
 

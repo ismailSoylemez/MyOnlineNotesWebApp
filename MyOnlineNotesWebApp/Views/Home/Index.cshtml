@@ -111,4 +111,20 @@
 }
 
 
-@BootstrapHelper.ModalPopup("modal_comment","Yorumlar");
+@BootstrapHelper.ModalPopup(id:"modal_comment", title:"Yorumlar")
+
+<script>
+    $(function () {
+        //modal show olduktan sonra ilgili conroller altındaki action ı ilgili elemente yükleyecek
+        $('#modal_comment').on('show.bs.modal', function (e) {
+            $('#modal_comment_body').load("/Comment/ShowNoteComments");
+        })
+
+
+
+
+    });
+
+
+
+</script>

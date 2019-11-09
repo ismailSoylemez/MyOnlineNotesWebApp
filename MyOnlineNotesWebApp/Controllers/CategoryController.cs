@@ -1,5 +1,6 @@
 ﻿using MyOnlineNotes.BusinessLayer;
 using MyOnlineNotesEntities;
+using MyOnlineNotesWebApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace MyOnlineNotesWebApp.Controllers
         // GET: Category
         public ActionResult Index()
         {
-            return View(categoryManager.List());
+            return View(CacheHelper.GetCategoriesFromCache());
         }
 
         // GET: Category/Details/5
@@ -56,6 +57,12 @@ namespace MyOnlineNotesWebApp.Controllers
             if (ModelState.IsValid)
             {
                 categoryManager.Insert(category);
+
+
+                //insert update delete işlemlerinden sonra cache güncellemesi yapmamız gerekir çünkü güncellenmezse eski dataları çekecektir
+                CacheHelper.RemoveCategoiesFromCache();
+
+
                 return RedirectToAction("Index");
 
             }
@@ -96,7 +103,10 @@ namespace MyOnlineNotesWebApp.Controllers
 
 
                 // TODO : İNCELE
-                categoryManager.Update(category);
+                categoryManager.Update(cat);
+                CacheHelper.RemoveCategoiesFromCache();
+
+
                 return RedirectToAction("Index");
 
             }
@@ -124,9 +134,11 @@ namespace MyOnlineNotesWebApp.Controllers
         // POST: Category/Delete/5
         [HttpPost]
         public ActionResult Delete(int id)
-        {
+        {  
             Category category = categoryManager.Find(x => x.Id == id);
             categoryManager.Delete(category);
+            CacheHelper.RemoveCategoiesFromCache();
+
             return RedirectToAction("Index");
 
         }

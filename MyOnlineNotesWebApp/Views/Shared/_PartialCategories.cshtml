@@ -1,13 +1,13 @@
 ﻿@using MyOnlineNotes.BusinessLayer
 @using MyOnlineNotesEntities
+@using MyOnlineNotesWebApp.Models
+
 
 @{
-    CategoryManager cm = new CategoryManager();
-    List<Category> list = cm.List();
-
-
+   
+    List<Category> list = CacheHelper.GetCategoriesFromCache();
 }
-
+ 
 
 
 <h1 class="my-4">Kategoriler</h1>

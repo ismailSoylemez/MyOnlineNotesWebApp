@@ -241,7 +241,6 @@ C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesWebApp\obj\Debug\MyOnli
 C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesWebApp\obj\Debug\MyOnlineNotesWebApp.pdb
 C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesWebApp\bin\MyOnlineNotes.Core.dll
 C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesWebApp\bin\MyOnlineNotes.Core.pdb
-C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesWebApp\obj\Debug\MyOnlineNotesWebApp.dll.config
 C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesWebApp\bin\Microsoft.DiaSymReader.Native.x86.dll
 C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesWebApp\bin\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesWebApp\bin\Microsoft.AspNetCore.Authorization.dll
@@ -354,3 +353,8 @@ C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesWebApp\bin\System.Memor
 C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesWebApp\bin\System.Numerics.Vectors.xml
 C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesWebApp\bin\System.Reflection.Metadata.xml
 C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesWebApp\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesWebApp\bin\Microsoft.Web.Helpers.dll
+C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesWebApp\bin\WebMatrix.Data.dll
+C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesWebApp\bin\WebMatrix.WebData.dll
+C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesWebApp\bin\WebMatrix.Data.xml
+C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesWebApp\bin\WebMatrix.WebData.xml

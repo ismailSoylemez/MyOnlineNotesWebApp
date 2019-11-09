@@ -1,5 +1,6 @@
 ﻿using MyOnlineNotes.Common;
 using MyOnlineNotesEntities;
+using MyOnlineNotesWebApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,13 +12,14 @@ namespace MyOnlineNotesWebApp.Init
     {
         public string GetCurrentUsername()
         {
+            OnlineNoteUser user = CurrentSession.User;
 
-            if (HttpContext.Current.Session["Login"] != null)
+            if (user != null)
             {
-                OnlineNoteUser user = HttpContext.Current.Session["Login"] as OnlineNoteUser;
                 return user.Username;
             }
 
+            else 
             return "system";
 
         }

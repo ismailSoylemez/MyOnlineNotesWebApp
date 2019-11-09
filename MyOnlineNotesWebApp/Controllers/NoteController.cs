@@ -84,7 +84,7 @@ namespace MyOnlineNotesWebApp.Controllers
                 return RedirectToAction("Index");
 
             }
-            ViewBag.CategoryId = new SelectList(categoryManager.List(), "Id", "Title");
+            ViewBag.CategoryId = new SelectList(CacheHelper.GetCategoriesFromCache(), "Id", "Title");
             return View(note);
 
 
@@ -104,7 +104,7 @@ namespace MyOnlineNotesWebApp.Controllers
                 return HttpNotFound();
             }
 
-            ViewBag.CategoryId = new SelectList(categoryManager.List(), "Id", "Title");
+            ViewBag.CategoryId = new SelectList(CacheHelper.GetCategoriesFromCache(), "Id", "Title");
             return View(note);
         }
 
@@ -128,7 +128,7 @@ namespace MyOnlineNotesWebApp.Controllers
                 return RedirectToAction("Index");
 
             }
-            ViewBag.CategoryId = new SelectList(categoryManager.List(), "Id", "Title");
+            ViewBag.CategoryId = new SelectList(CacheHelper.GetCategoriesFromCache(), "Id", "Title");
             return View(note);
         }
 

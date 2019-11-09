@@ -1,5 +1,7 @@
-﻿
+﻿ 
 @using MyOnlineNotesEntities
+@using MyOnlineNotesWebApp.Models
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,16 +30,7 @@
 
 <body>
 
-    @{ 
-        OnlineNoteUser user = null;
 
-        if (Session["login"] != null)
-        {
-            user = Session["login"] as OnlineNoteUser;
-        }
-
-
-    }
 
 
     <!-- Navigation -->
@@ -71,7 +64,7 @@
                 </ul>
             </div>
             <div class="dropdown mr-1">
-                @if (user != null)
+                @if (CurrentSession.User != null)
                 {
                     <li class="dropdown">
                         <a href="/Note/MyNotes" class="dropdown-toggle btn btn-danger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -92,7 +85,7 @@
                                 @BootstrapHelper.LinkMenu("/Note/MyLikedNotes", "fas fa-heart", "Beğendiklerim")
                             </li>
 
-                            @if (user.IsAdmin)
+                            @if (CurrentSession.User.IsAdmin)
                             {
                                 <li role="separator" class="dropdown-divider"><a href="#"></a></li>
                                 <li>
@@ -122,7 +115,7 @@
                     Üye Ol / Giriş Yap
                 </button>
                 <div class="dropdown-menu dropdown-menu-right ">
-                    @if (user == null)
+                    @if (CurrentSession.User  == null)
                     {
                         <a href="/Home/Login" class="btn-danger dropdown-item fas fa-sign-in-alt mr-1">Giriş</a>
                         <a href="/Home/Register" class="btn-danger dropdown-item fas fa-sign-in-alt mr-1">Üye Ol</a>
@@ -133,10 +126,10 @@
                     }
                 </div>
             </div>
-            @if (user != null)
+            @if ( CurrentSession.User != null)
             {
                 <div class="mr-3 ml-3">
-                    <a href="/Home/ShowProfile"><span class="fas fa-user-tie mr-1"></span>@user.Name  @user.Surname</a>
+                    <a href="/Home/ShowProfile"><span class="fas fa-user-tie mr-1"></span>@CurrentSession.User.Name  @CurrentSession.User.Surname</a>
                 </div>
             }
 

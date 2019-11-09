@@ -4,6 +4,7 @@ using MyOnlineNotes.DataAccessLayer.EntityFramework;
 using MyOnlineNotesEntities;
 using MyOnlineNotesEntities.Messages;
 using MyOnlineNotesEntities.ValueObject;
+using MyOnlineNotesWebApp.Models;
 using MyOnlineNotesWebApp.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -81,9 +82,10 @@ namespace MyOnlineNotesWebApp.Controllers
 
         public ActionResult ShowProfile()
         {
-            OnlineNoteUser currentUser = Session["login"] as OnlineNoteUser;
+            //artık buna gerek yok çünkü CurrentUser classında tutuyoruz bu bilgiyi
+            //OnlineNoteUser currentUser = Session["login"] as OnlineNoteUser;
 
-            BusinessLayerResult<OnlineNoteUser> res = OnlineNoteUserManager.GetUserById(currentUser.Id);
+            BusinessLayerResult<OnlineNoteUser> res = OnlineNoteUserManager.GetUserById(CurrentSession.User.Id);
 
             if (res.Errors.Count>0)
             {
@@ -102,10 +104,10 @@ namespace MyOnlineNotesWebApp.Controllers
 
         public ActionResult EditProfile()
         {
-            OnlineNoteUser currentUser = Session["login"] as OnlineNoteUser;
+            //OnlineNoteUser currentUser = Session["login"] as OnlineNoteUser;
 
             //MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
-            BusinessLayerResult<OnlineNoteUser> res = OnlineNoteUserManager.GetUserById(currentUser.Id);
+            BusinessLayerResult<OnlineNoteUser> res = OnlineNoteUserManager.GetUserById(CurrentSession.User.Id);
 
             if (res.Errors.Count > 0)
             {
@@ -162,7 +164,7 @@ namespace MyOnlineNotesWebApp.Controllers
 
                 }
 
-                Session["login"] = res.Result; //session güncellendi
+                CurrentSession.Set<OnlineNoteUser>("login", res.Result); //session güncellendi
 
                 return RedirectToAction("ShowProfile");
             }
@@ -199,10 +201,10 @@ namespace MyOnlineNotesWebApp.Controllers
 
         public ActionResult DeleteProfile()
         {
-            OnlineNoteUser currentUser = Session["login"] as OnlineNoteUser;
+            //OnlineNoteUser currentUser = Session["login"] as OnlineNoteUser;
 
             //MyOnlineNotesUserManager eum = new MyOnlineNotesUserManager();
-            BusinessLayerResult<OnlineNoteUser> res = OnlineNoteUserManager.RemoveUserById(currentUser.Id);
+            BusinessLayerResult<OnlineNoteUser> res = OnlineNoteUserManager.RemoveUserById(CurrentSession.User.Id );
 
             if (res.Errors.Count>0)
             {
@@ -258,7 +260,7 @@ namespace MyOnlineNotesWebApp.Controllers
                     return View(model);
                 }
 
-                Session["login"] = res.Result;
+                CurrentSession.Set<OnlineNoteUser>("login", res.Result);
                
                 //hata yoksa
                 return RedirectToAction("Index");

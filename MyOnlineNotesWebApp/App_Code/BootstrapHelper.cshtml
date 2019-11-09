@@ -14,7 +14,6 @@
     </a>
 }
 
-
 @helper Button(string id = "", string color = "", string addtioanalClass = "", string typ = "button", string icon = "", string text = "")
 {
 
@@ -31,11 +30,43 @@
     </button>
 }
 
-
-@helper LinkMenu(string url="",string icon="",string text="")
-{ 
+@helper LinkMenu(string url = "", string icon = "", string text = "")
+{
     <a href="@url">
         <span class="@icon + ml-2"></span>
-            @text
+        @text
     </a>
+}
+
+@helper ModalPopup(string id="myModal",string title="Modal Title", bool showCloseButton = true)
+{
+    <!-- Modal -->
+    <div class="modal fade" id="@id" name="@id" tabindex="-1" role="dialog" aria-labelledby="@(id + "_label")" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" id="@(id + "_header")">
+                    <h5 class="modal-title" id="@(id + "_label")">@title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="@(id + "_body")">
+                        @*tıklandığında o yazının yorumları gösterilmeli yani sabit olmamalı bu dive dışarıdan erişmem gerekecek*@
+                    
+                    
+                </div>
+                <div class="modal-footer" id="@(id + "_footer")">
+                    @if (showCloseButton)
+                    {
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
 }

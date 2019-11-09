@@ -45,25 +45,25 @@
 
 
             @*NOTLAR*@
-        <div class="row">
+            <div class="row">
 
-            @foreach (Note note in Model)
-            {
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt="@note.Title"></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">
-                                    @note.Title
-                                </a>
-                            </h4>
-                            <p>
-                                <span class="fas fa-calendar-alt mr-1"></span>@note.ModifiedOn.ToString()<br />
-                                <span class="fas fa-user-tie mr-1"></span>@note.Owner.Username<br />
-                            </p>
-                            <hr />
-                            
+                @foreach (Note note in Model)
+                {
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt="@note.Title"></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">
+                                        @note.Title
+                                    </a>
+                                </h4>
+                                <p>
+                                    <span class="fas fa-calendar-alt mr-1"></span>@note.ModifiedOn.ToString()<br />
+                                    <span class="fas fa-user-tie mr-1"></span>@note.Owner.Username<br />
+                                </p>
+                                <hr />
+
                                 @if (string.IsNullOrEmpty(note.Text) == false && note.Text.Length > 70)
                                 {
 
@@ -76,26 +76,26 @@
                                         @note.Text
                                     </p>
                                 }
-                            
+
                             </div>
-                        <div>
-                            <p class="float-right mr-4">
-                                <button type="button" class="btn btn-success ">
-                                    <span class="glyphicon glyphicon-comment mr-2"></span>Yorumlar
-                                </button>
-                            </p>
-                            <p>
-                                <button class=" float-left ml-2 btn-danger btn-sm" type="button">
-                                    <span class="glyphicon glyphicon-star-empty mr-2"></span>@note.LikeCount
-                                </button>
-                            </p>
+                            <div>
+                                <p class="float-right mr-4">
+                                    <button type="button" class="btn btn-success ">
+                                        <span class="glyphicon glyphicon-comment mr-2"></span>Yorumlar
+                                    </button>
+                                </p>
+                                <p>
+                                    <button class=" float-left ml-2 btn-danger btn-sm" type="button">
+                                        <span class="glyphicon glyphicon-star-empty mr-2"></span>@note.LikeCount
+                                    </button>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            }
+                }
 
 
-        </div>
+            </div>
             <!-- /.row -->
         </div>
         <!-- /.col-lg-9 -->
@@ -107,5 +107,27 @@
 
 
 @section footer {
-        @Html.Partial("_PartialFooter")
+    @Html.Partial("_PartialFooter")
 }
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,20 @@
 ﻿@using MyOnlineNotesEntities
 @model List<Comment>
 
+@using MyOnlineNotesWebApp.Models
+
+
+
+@{ 
+
+    OnlineNoteUser user = CurrentSession.User;
+
+
+}
+
+
+@foreach (Comment item in Model)
+{
 
     <div class="media">
         <div class="align-self-start mr-3">
@@ -13,22 +27,36 @@
         <div class="media-body">
             <div>
                 <span>
-                    Ipsum gravida vel pretium tellus tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut.
+                    @item.Text
                 </span>
-                <span class="float-right">
-                    <br /><br />
-                    <button class="btn btn-warning" type="button">
-                        <span class="glyphicon glyphicon-edit btn-xs"></span>
-                    </button>
-                    <button class="btn btn-danger" type="button">
-                        <span class="glyphicon glyphicon-trash btn-xs"></span>
-                    </button>
-                </span>
+
+                @if (user != null && user.Id == item.Owner.Id)
+                {
+                    <span class="float-right">
+                        <br /><br />
+                        <button class="btn btn-warning" type="button">
+                            <span class="glyphicon glyphicon-edit btn-xs"></span>
+                        </button>
+                        <button class="btn btn-danger" type="button">
+                            <span class="glyphicon glyphicon-trash btn-xs"></span>
+                        </button>
+                    </span>
+                }
                 <br />
                 <small>
-                    <span class="glyphicon glyphicon-time"></span>  23.01.2019 13:23:34 &nsub;
-                    <span class="glyphicon glyphicon-user"></span>  ismailsoylemez
+                    <span class="glyphicon glyphicon-time"></span> @item.ModifiedOn  &nbsp; &nbsp; &nbsp;
+                    <span class="glyphicon glyphicon-user"></span>  @item.Owner.Username
                 </small>
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
+}
+

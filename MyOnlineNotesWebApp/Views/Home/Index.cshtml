@@ -80,7 +80,7 @@
                             </div>
                             <div>
                                 <p class="float-right mr-4">
-                                    <button type="button" class="btn btn-success"  data-toggle="modal" data-target="#modal_comment">
+                                    <button type="button" class="btn btn-success"  data-toggle="modal" data-target="#modal_comment" data-note-id="@note.Id">
                                         <span class="glyphicon glyphicon-comment mr-2"></span>Yorumlar
                                     </button>
                                 </p>
@@ -117,12 +117,12 @@
     $(function () {
         //modal show olduktan sonra ilgili conroller altındaki action ı ilgili elemente yükleyecek
         $('#modal_comment').on('show.bs.modal', function (e) {
-            $('#modal_comment_body').load("/Comment/ShowNoteComments");
+
+            var btn = $(e.relatedTarget);// butonu yakaladım
+            var noteid = btn.data("note-id");
+
+            $('#modal_comment_body').load("/Comment/ShowNoteComments/" + noteid);
         })
-
-
-
-
     });
 
 

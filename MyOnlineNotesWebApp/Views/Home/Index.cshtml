@@ -114,14 +114,20 @@
 @BootstrapHelper.ModalPopup(id:"modal_comment", title:"Yorumlar")
 
 <script>
+
+    var noteid = -1;
+
+    var modalCommenBodyId = "#modal_comment_body"; 
+
+
     $(function () {
         //modal show olduktan sonra ilgili conroller altındaki action ı ilgili elemente yükleyecek
         $('#modal_comment').on('show.bs.modal', function (e) {
 
             var btn = $(e.relatedTarget);// butonu yakaladım
-            var noteid = btn.data("note-id");
+             noteid = btn.data("note-id");
 
-            $('#modal_comment_body').load("/Comment/ShowNoteComments/" + noteid);
+            $(modalCommenBodyId).load("/Comment/ShowNoteComments/" + noteid);
         })
     });
 
@@ -148,6 +154,8 @@
                 btnSpan.removeClass("glyphicon-edit");
                 btnSpan.addClass("glyphicon-ok");
 
+                $(spanId).addClass("editable"); // eitable true olduğunda css kodlarım devreye girecek
+
                 $(spanId).attr("contenteditable", true);
             }
             //ikinci kez tıkladığımda
@@ -160,7 +168,40 @@
                 btnSpan.addClass("glyphicon-edit");
                 btnSpan.removeClass("glyphicon-ok");
 
+                $(spanId).removeClass("editable");
+                $(spanId).focus();
+
                 $(spanId).attr("contenteditable", false);
+
+
+                //update sorgusunu çalıştırmam gerekecek
+
+                var txt = $(spanId).text();
+
+                $.ajax({
+                    method: "POST",
+                    url: "/Comment/Edit/" + commentId,
+                    data: { text: txt }
+                }).done(function (data) {
+
+                    //başarılıysa
+                    if (data.result) {
+
+                        //yorumlar partial tekrar yüklenir
+                        $(modalCommenBodyId).load("/Comment/ShowNoteComments/" + noteid);
+
+
+                    }
+                    else
+                    {
+                        alert("Yorum Güncellenemedi !");
+                    }
+
+                }).fail(function () {
+
+                    alert("Sunucu ile Bağlantı Kurulamadı !");
+
+                });
 
 
             }

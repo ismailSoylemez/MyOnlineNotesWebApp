@@ -26,7 +26,7 @@
         </div>
         <div class="media-body">
             <div>
-                <span>
+                <span id="comment_text_@item.Id" contenteditable="false">
                     @item.Text
                 </span>
 
@@ -34,7 +34,7 @@
                 {
                     <span class="float-right">
                         <br /><br />
-                        <button class="btn btn-warning" type="button">
+                        <button type="button" class="btn btn-warning" data-edit-mode="false" onclick="doComment(this,'edit_clicked',@item.Id,'#comment_text_@item.Id');">
                             <span class="glyphicon glyphicon-edit btn-xs"></span>
                         </button>
                         <button class="btn btn-danger" type="button">
@@ -50,12 +50,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
 
 
 }

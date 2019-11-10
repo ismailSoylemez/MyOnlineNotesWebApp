@@ -127,4 +127,53 @@
 
 
 
+    function doComment(btn, e, commentId, spanId) {
+
+
+        var button = $(btn);
+        var mode = button.data("edit-mode");
+        
+
+
+        //eğer edit moddaysam butonu yeşile çevirmem ikonu tik yapmam gerekiyor
+        if (e == "edit_clicked")
+        {
+
+            //ilk tıklamamızda edit mode false ise açmam gerekiyor
+            if (!mode) {
+                button.data("edit-mode", true);
+                button.removeClass("btn-warning");
+                button.addClass("btn-success");
+                var btnSpan = button.find("span");
+                btnSpan.removeClass("glyphicon-edit");
+                btnSpan.addClass("glyphicon-ok");
+
+                $(spanId).attr("contenteditable", true);
+            }
+            //ikinci kez tıkladığımda
+            else
+            {
+                button.data("edit-mode", false);
+                button.addClass("btn-warning");
+                button.removeClass("btn-success");
+                var btnSpan = button.find("span");
+                btnSpan.addClass("glyphicon-edit");
+                btnSpan.removeClass("glyphicon-ok");
+
+                $(spanId).attr("contenteditable", false);
+
+
+            }
+
+
+        }
+
+
+    }
+
+
+
+
+
+
 </script>

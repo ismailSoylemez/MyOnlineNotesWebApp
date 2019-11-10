@@ -40,35 +40,42 @@
 
             @foreach (var item in Model)
             {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Text)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsDraft)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LikeCount)
-            </td>
-            <td>
-                @BootstrapHelper.LinkButton("/Note/Edit/" + item.Id, "warning", " btn-sm", "Edit", "fas fa-edit", string.Empty)
-                @BootstrapHelper.LinkButton("/Note/Details/" + item.Id, "info", " btn-sm", "Details", "fas fa-search", string.Empty)
-                @BootstrapHelper.LinkButton("/Note/Delete/" + item.Id, "danger", " btn-sm", "Delete", "fas fa-trash-alt", string.Empty)
-            </td>
-        </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Text)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsDraft)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LikeCount)
+                    </td>
+                    <td width="150"> 
+                        <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal_comment" data-note-id="@item.Id">
+                            <span class="glyphicon glyphicon-comment"></span>
+                        </button>
+
+                        @BootstrapHelper.LinkButton("/Note/Edit/" + item.Id, "warning", "btn-sm", "Edit", "fas fa-edit", string.Empty)
+                        @BootstrapHelper.LinkButton("/Note/Details/" + item.Id, "info", "btn-sm", "Details", "fas fa-search", string.Empty)
+                        @BootstrapHelper.LinkButton("/Note/Delete/" + item.Id, "danger", "btn-sm", "Delete", "fas fa-trash-alt", string.Empty)
+                    </td>
+                </tr>
             }
 
         </table>
-
-
     </div>
 </div>
+
+
+@BootstrapHelper.ModalPopup(id: "modal_comment", title: "Yorumlar")
+
+<script src="~/Comment.js"></script>
 
 
 

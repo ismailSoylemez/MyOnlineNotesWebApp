@@ -368,6 +368,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Comment.js" />
     <Content Include="Content\a.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />

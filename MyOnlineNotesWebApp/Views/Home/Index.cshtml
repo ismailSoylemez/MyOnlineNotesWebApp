@@ -208,6 +208,40 @@
 
 
         }
+        //eğer delete butonuna bastıysam 
+        else if (e == "delete_clicked")
+        {
+
+            var dialog_res = confirm("Yorum Silinsin mi ?");
+
+            if (dialog_res == false) {
+                return false;
+            }
+            else
+            {
+                $(spanId).focus();
+
+                $.ajax({
+                        method: "GET",
+                        url: "/Comment/Delete/" + commentId,
+                    }).done(function (data) {
+                        //başarılıysa
+                        if (data.result) {
+                            //yorumlar partial tekrar yüklenir
+                            $(modalCommenBodyId).load("/Comment/ShowNoteComments/" + noteid);
+                        }
+                        else
+                        {
+                            alert("Yorum Silinemedi !");
+                        }
+
+                    }).fail(function () {
+
+                        alert("Sunucu ile Bağlantı Kurulamadı !");
+
+                    });
+            }
+        }
 
 
     }

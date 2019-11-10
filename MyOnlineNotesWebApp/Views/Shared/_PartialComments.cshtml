@@ -37,7 +37,7 @@
                         <button type="button" class="btn btn-warning" data-edit-mode="false" onclick="doComment(this,'edit_clicked',@item.Id,'#comment_text_@item.Id');">
                             <span class="glyphicon glyphicon-edit btn-xs"></span>
                         </button>
-                        <button class="btn btn-danger" type="button">
+                        <button class="btn btn-danger" type="button"  onclick="doComment(this,'delete_clicked',@item.Id);">
                             <span class="glyphicon glyphicon-trash btn-xs"></span>
                         </button>
                     </span>

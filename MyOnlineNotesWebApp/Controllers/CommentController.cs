@@ -1,5 +1,6 @@
 ﻿using MyOnlineNotes.BusinessLayer;
 using MyOnlineNotesEntities;
+using MyOnlineNotesWebApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -15,7 +16,7 @@ namespace MyOnlineNotesWebApp.Controllers
 
         private NoteManager noteManager = new NoteManager();
         private CommentManager commentManager = new CommentManager();
-    
+
 
         // GET: Comment
         public ActionResult ShowNoteComments(int? id)
@@ -38,8 +39,8 @@ namespace MyOnlineNotesWebApp.Controllers
             }
 
 
-            return PartialView("_PartialComments",note.Comments);
-        } 
+            return PartialView("_PartialComments", note.Comments);
+        }
 
 
         [HttpPost]
@@ -72,7 +73,7 @@ namespace MyOnlineNotesWebApp.Controllers
 
 
 
-        public ActionResult Delete (int? id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -96,6 +97,43 @@ namespace MyOnlineNotesWebApp.Controllers
 
         }
 
+
+        [HttpPost]
+        public ActionResult Create (int? noteid, Comment comment)
+        {
+
+            ModelState.Remove("CreatedOn");
+            ModelState.Remove("ModifiedOn");
+            ModelState.Remove("ModifiedUserName");
+
+            if (ModelState.IsValid)
+            {
+                if (noteid == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+
+                Note note = noteManager.Find(x => x.Id == noteid);
+
+                if (note == null)
+                {
+                    return new HttpNotFoundResult();
+                }
+
+                comment.Note = note;
+                comment.Owner = CurrentSession.User;
+
+                if (commentManager.Insert(comment) > 0)
+                {
+                    return Json(new { result = true }, JsonRequestBehavior.AllowGet);
+                }
+
+            }
+
+            return Json(new { result = false }, JsonRequestBehavior.AllowGet);
+
+
+        }
 
     }
 }

@@ -5,7 +5,7 @@
 
 
 
-@{ 
+@{
 
     OnlineNoteUser user = CurrentSession.User;
 
@@ -37,7 +37,7 @@
                         <button type="button" class="btn btn-warning" data-edit-mode="false" onclick="doComment(this,'edit_clicked',@item.Id,'#comment_text_@item.Id');">
                             <span class="glyphicon glyphicon-edit btn-xs"></span>
                         </button>
-                        <button class="btn btn-danger" type="button"  onclick="doComment(this,'delete_clicked',@item.Id);">
+                        <button class="btn btn-danger" type="button" onclick="doComment(this,'delete_clicked',@item.Id);">
                             <span class="glyphicon glyphicon-trash btn-xs"></span>
                         </button>
                     </span>
@@ -47,6 +47,7 @@
                     <span class="glyphicon glyphicon-time"></span> @item.ModifiedOn  &nbsp; &nbsp; &nbsp;
                     <span class="glyphicon glyphicon-user"></span>  @item.Owner.Username
                 </small>
+                <br /> <br /> 
             </div>
         </div>
     </div>
@@ -54,3 +55,35 @@
 
 }
 
+
+
+
+@if (user != null)//kullanıcı giriş yapmışsa
+{
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <hr />
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="input-group mb-3">
+                <input id="new_comment_text" type="text" class="form-control" placeholder="Yorumunuz...">
+                <div class="input-group-btn">
+                    <button class="btn btn-success" type="button" onclick="doComment(this,'new_clicked',-1);">
+                        <span class="glyphicon glyphicon-send mr-2"></span>Gönder
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+}

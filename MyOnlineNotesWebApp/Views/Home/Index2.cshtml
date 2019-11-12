@@ -1,0 +1,223 @@
+﻿@using MyOnlineNotesEntities
+@model List<Note>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <!-- Kategoriler -->
+        <div class="col-md-3">
+            @Html.Partial("_PartialCategories")
+        </div>
+
+        <div class="col-md-9">
+            <!-- Carousel -->
+            <div class="row carousel-holder">
+                <div class="col-md-12">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                            </div>
+                            <div class="item">
+                                <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                            </div>
+                            <div class="item">
+                                <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                            </div>
+                        </div>
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notlar -->
+            <div class="row">
+                @foreach (Note note in Model)
+                {
+                    <div class="col-sm-4 col-lg-4 col-md-4" data-note-id="@note.Id">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="@note.Title">
+                            <div class="caption">
+                                <h4>
+                                    <a href="#" data-toggle="modal" data-target="#modal_notedetail" data-note-id="@note.Id">
+                                        @note.Title
+                                    </a>
+                                </h4>
+                                <h6 class="text-right">
+                                    @note.Owner.Username <span class="glyphicon glyphicon-user"></span><br />
+                                    @note.ModifiedOn.ToString("dd.MM.yy HH:mm") <span class="glyphicon glyphicon-time"></span>
+                                </h6>
+
+                                @if (string.IsNullOrEmpty(note.Text) == false && note.Text.Length > 70)
+                                {
+                                    <p>@(note.Text.Substring(0, 70) + "...")</p>
+                                    <p class="pull-right">
+                                        <a href="#" data-toggle="modal" data-target="#modal_notedetail" data-note-id="@note.Id" class="btn btn-default btn-sm">devamı <span class="glyphicon glyphicon-chevron-right"></span></a>
+                                    </p>
+                                }
+                                else
+                                {
+                                    <p>@note.Text</p>
+                                }
+
+                            </div>
+                            <div>
+                                <hr />
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">
+                                    <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal_comment" data-note-id="@note.Id">
+                                        <span class="glyphicon glyphicon-comment"></span> Yorumlar
+                                    </button>
+                                </p>
+                                <p>
+                                    <button class="btn btn-default btn-sm" type="button" data-liked="false" data-note-id="@note.Id">
+                                        <span class="glyphicon glyphicon-star-empty like-star"></span>&nbsp;
+                                        <span class="like-count">@note.LikeCount</span>
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section footer{
+    @Html.Partial("_PartialFooter")
+}
+@BootstrapHelper.ModalPopup(id: "modal_comment", title: "Yorumlar")
+
+<script src="~/Comment.js"></script>
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+
+<script>
+
+    //ilk olarak sayfadaki notların id sini çekmem gerekecek bunun için biz dizi tanımlayıp sayfada 'div[data-note-id]' properties özellikli nesneyi alıyorum. daha sonra onu jquery nesnesine çeviriyorum ve diziye ekliyorum.
+    $(function () {
+        var noteids = [];
+
+        $("div[data-note-id]").each(function (i, e) {
+            noteids.push($(e).data("note-id"));
+        });
+
+        console.log(noteids);
+
+
+        $.ajax({
+            method: "POST",
+            url: "/Note/GetLiked",
+            data: { ids: noteids }
+        }).done(function (data) {
+            console.log(data);
+            if (data.result != null && data.result.length > 0) {
+                for (var i = 0; i < data.result.length; i++) {
+                    var id = data.result[i]; // tek tek id leri alıyoruz
+                    var likedNote = $("div[data-note-id=" + id + "]"); // sayfada buluna idleri tespit ediyorum
+                    var btn = likedNote.find("button[data-liked]"); // like butonum
+                    var span = btn.children().first(); // yıldız yapacağım span yani like atılmış not.
+
+                    btn.data("liked", true);
+                    span.removeClass("glyphicon-star-empty");
+                    span.addClass("glyphicon-star");
+                }
+            }
+        }).fail(function () {
+
+
+        });
+
+
+
+
+        // beğeni butonuna basıldığında olacaklar
+        $("button[data-liked]").click(function () {
+
+            var btn = $(this); //butonu elde ettim
+            var liked = btn.data("data-liked"); //işlem yapılmadan önceki like durumu
+            var noteid = btn.data("note-id");
+            var spanStar = btn.find("span.like-star");
+            var spanCount = btn.find("span.like-count");
+
+            console.log(liked);
+            console.log("like count : " + spanCount.text());
+
+
+            $.ajax({
+                method: "POST",
+                url: "/Note/SetLikeState",
+                data: { "noteid": noteid, "liked": !liked } // false ise true veya tam tersi olacak // like ı ters yolladık
+            }).done(function (data) {
+
+                console.log(data);
+
+                if (data.hasError == true) {
+                    alert(data.errorMessage);
+                }
+                else {
+
+                    liked = !liked; //liked ı normale çeviriyorum
+                    btn.data("liked", liked); //attribute u güncelledim yeni değer ile
+                    spanCount.text(data.result); // yeni beğeni sayımı güncelledim (controllerdan yolladığımız değerdir)
+
+                    console.log("like count(after) : " + spanCount.text());
+
+
+                    spanStar.removeClass("glyphicon-star-empty");
+                    spanStar.removeClass("glyphicon-star");
+
+                    if (liked) {
+                        spanStar.addClass("glyphicon-star");
+                    } else {
+                        spanStar.addClass("glyphicon-star-empty");
+                    }
+                }
+            }).fail(function () {
+                alert("sunucu ile bağlantı kurulamadı !");
+            });
+
+
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+    });
+
+
+
+
+
+
+
+
+</script>
+
+
+

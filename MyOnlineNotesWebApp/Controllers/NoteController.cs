@@ -177,7 +177,50 @@ namespace MyOnlineNotesWebApp.Controllers
         }
 
 
+        [HttpPost]
+        public ActionResult SetLikeState(int noteid , bool liked )
+        {
 
+            int res = 0;
+
+            //kullanıcının likelamaya çalıştığı not mevcut mu ?
+            Liked like = likedManager.Find(x => x.Note.Id == noteid && x.LikedUser.Id == CurrentSession.User.Id);
+
+
+            Note note = noteManager.Find(x => x.Id == noteid); // notu aldık
+
+            if (like != null && liked == false) // kayıtı silmem gerekir
+            {
+               res = likedManager.Delete(like);
+            }
+            else if (like == null && liked == true) //böyle bir kayıt yok ise kullanıcı ilk defa like atıyordur
+            {
+                res = likedManager.Insert(new Liked() { // insert yaptım
+                    LikedUser= CurrentSession.User,
+                    Note=note
+                });
+            }
+
+
+            if (res > 0) // bir işlem yaptıysam
+            {
+                if (liked) // like attıysam
+                {
+                    note.LikeCount++;
+                }
+                else // like kaldırdıysam
+                {
+                    note.LikeCount--;
+                }
+
+                res = noteManager.Update(note);
+
+                return Json(new { hasError = false, errorMessage = string.Empty, result = note.LikeCount }); // işlem başarılı olduysa
+            }
+
+            return Json(new { hasError = true, errorMessage = "Beğenme işlemi gerçekleştirilemedi.", result = note.LikeCount }); //işlem başarısız olduğunda sayafaya dönecek değer
+
+        }
 
     }
 }

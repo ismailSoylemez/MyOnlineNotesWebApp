@@ -155,5 +155,29 @@ namespace MyOnlineNotesWebApp.Controllers
 
             return RedirectToAction("Index");
         }
+
+
+
+        [HttpPost]
+        public ActionResult GetLiked(int[] ids)
+        {
+
+            //sadece kullanıcının likeladığı notların idlerini döndüreceğim. bunun için sorgu yazmalıyım
+
+            List<int> likedNoteIds = likedManager.List(
+                x => x.LikedUser.Id == CurrentSession.User.Id  && ids.Contains(x.Note.Id)).Select(
+                x =>x.Note.Id).ToList();
+
+
+
+            return Json(new { result = likedNoteIds});
+
+
+
+        }
+
+
+
+
     }
 }

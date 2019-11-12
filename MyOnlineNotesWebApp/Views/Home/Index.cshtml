@@ -85,7 +85,7 @@
                                     </button>
                                 </p>
                                 <p>
-                                    <button class=" float-left ml-2 btn-danger btn-sm" type="button" data-liked="false" data-note-id="@note.Id">
+                                    <button class=" float-left ml-2  btn-sm" type="button" data-liked="false" data-note-id="@note.Id">
                                         <span class="glyphicon glyphicon-star-empty mr-2"></span>
                                         &nbsp;
                                         <span class="like-count">
@@ -123,10 +123,8 @@
 
 <script>
 
-    //ilk olarak sayfadaki notların id sini çekmem gerekecek
-
+    //ilk olarak sayfadaki notların id sini çekmem gerekecek bunun için biz dizi tanımlayıp sayfada 'div[data-note-id]' properties özellikli nesneyi alıyorum. daha sonra onu jquery nesnesine çeviriyorum ve diziye ekliyorum. 
     $(function () {
-
         var noteids = [];
 
         $("div[data-note-id]").each(function (i, e) {
@@ -134,6 +132,36 @@
         });
 
         console.log(noteids);
+
+
+        $.ajax({
+            method: "POST",
+            url: "/Note/GetLiked",
+            data: { ids: noteids }
+        }).done(function (data) {
+
+            console.log(data);
+
+            if (data.result != null && data.result.length > 0)
+            {
+                for (var i = 0; i < data.result.length; i++)
+                {
+                    var id = data.result[i]; // tek tek id leri alıyoruz
+                    var likedNote = $("div[data-note-id=" + id + "]"); // sayfada buluna idleri tespit ediyorum
+                    var btn = likedNote.find("button[data-liked]"); // like butonum
+                    var span = btn.children().first(); // yıldız yapacağım span yani like atılmış not.
+
+                    btn.data("liked", true);
+                    span.removeClass("glyphicon-star-empty");
+                    span.addClass("glyphicon-star");
+                }
+            }
+
+
+        }).fail(function(){
+
+
+        });
 
     });
 

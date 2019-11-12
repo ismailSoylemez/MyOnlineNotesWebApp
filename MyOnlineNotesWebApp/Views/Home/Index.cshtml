@@ -49,7 +49,7 @@
 
                 @foreach (Note note in Model)
                 {
-                    <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="col-lg-4 col-md-6 mb-4" data-note-id="@note.Id">
                         <div class="card h-100">
                             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt="@note.Title"></a>
                             <div class="card-body">
@@ -85,8 +85,12 @@
                                     </button>
                                 </p>
                                 <p>
-                                    <button class=" float-left ml-2 btn-danger btn-sm" type="button">
-                                        <span class="glyphicon glyphicon-star-empty mr-2"></span>@note.LikeCount
+                                    <button class=" float-left ml-2 btn-danger btn-sm" type="button" data-liked="false" data-note-id="@note.Id">
+                                        <span class="glyphicon glyphicon-star-empty mr-2"></span>
+                                        &nbsp;
+                                        <span class="like-count">
+                                            @note.LikeCount
+                                        </span>
                                     </button>
                                 </p>
                             </div>
@@ -114,3 +118,30 @@
 @BootstrapHelper.ModalPopup(id:"modal_comment", title:"Yorumlar")
 
 <script src="~/Comment.js"></script>
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+<script>
+
+    //ilk olarak sayfadaki notların id sini çekmem gerekecek
+
+    $(function () {
+
+        var noteids = [];
+
+        $("div[data-note-id]").each(function (i, e) {
+            noteids.push($(e).data("note-id"));
+        });
+
+        console.log(noteids);
+
+    });
+
+
+
+
+
+
+
+
+</script>

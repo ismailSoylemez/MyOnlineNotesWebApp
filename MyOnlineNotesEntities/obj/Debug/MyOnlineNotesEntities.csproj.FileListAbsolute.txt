@@ -25,4 +25,3 @@ C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesEntities\obj\Debug\MyOn
 C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesEntities\obj\Debug\MyOnlineNotesEntities.csproj.CopyComplete
 C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesEntities\obj\Debug\MyOnlineNotesEntities.dll
 C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesEntities\obj\Debug\MyOnlineNotesEntities.pdb
-C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesEntities\obj\Debug\MyOnlineNotesEntities.csprojAssemblyReference.cache

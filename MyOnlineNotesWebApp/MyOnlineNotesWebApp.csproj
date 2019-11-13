@@ -381,6 +381,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\validation-summary.css" />
     <Content Include="Global.asax" />
+    <Content Include="HtmlPage1.html" />
     <Content Include="images\DefaultProfileImage.png" />
     <Content Include="index.html" />
     <Content Include="like.js" />

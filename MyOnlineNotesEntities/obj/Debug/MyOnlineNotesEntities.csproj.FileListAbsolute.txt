@@ -25,3 +25,17 @@ C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesEntities\obj\Debug\MyOn
 C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesEntities\obj\Debug\MyOnlineNotesEntities.csproj.CopyComplete
 C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesEntities\obj\Debug\MyOnlineNotesEntities.dll
 C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotesEntities\obj\Debug\MyOnlineNotesEntities.pdb
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotesEntities\bin\Debug\MyOnlineNotesEntities.dll.config
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotesEntities\bin\Debug\MyOnlineNotesEntities.dll
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotesEntities\bin\Debug\MyOnlineNotesEntities.pdb
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotesEntities\bin\Debug\EntityFramework.dll
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotesEntities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotesEntities\bin\Debug\FakeData.dll
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotesEntities\bin\Debug\EntityFramework.xml
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotesEntities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotesEntities\bin\Debug\FakeData.pdb
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotesEntities\obj\Debug\MyOnlineNotesEntities.csprojAssemblyReference.cache
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotesEntities\obj\Debug\MyOnlineNotesEntities.csproj.CoreCompileInputs.cache
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotesEntities\obj\Debug\MyOnlineNotesEntities.csproj.CopyComplete
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotesEntities\obj\Debug\MyOnlineNotesEntities.dll
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotesEntities\obj\Debug\MyOnlineNotesEntities.pdb

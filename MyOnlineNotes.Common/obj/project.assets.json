@@ -186,11 +186,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ismail\\Desktop\\MyOnlineNotesWebApp\\MyOnlineNotes.Common\\MyOnlineNotes.Common.csproj",
+      "projectUniqueName": "C:\\Users\\ismail\\Desktop\\ASP .NET MVC Yazılımcıların Yükselişi\\MyOnlineNotesWebApp\\MyOnlineNotes.Common\\MyOnlineNotes.Common.csproj",
       "projectName": "MyOnlineNotes.Common",
-      "projectPath": "C:\\Users\\ismail\\Desktop\\MyOnlineNotesWebApp\\MyOnlineNotes.Common\\MyOnlineNotes.Common.csproj",
+      "projectPath": "C:\\Users\\ismail\\Desktop\\ASP .NET MVC Yazılımcıların Yükselişi\\MyOnlineNotesWebApp\\MyOnlineNotes.Common\\MyOnlineNotes.Common.csproj",
       "packagesPath": "C:\\Users\\ismail\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ismail\\Desktop\\MyOnlineNotesWebApp\\MyOnlineNotes.Common\\obj\\",
+      "outputPath": "C:\\Users\\ismail\\Desktop\\ASP .NET MVC Yazılımcıların Yükselişi\\MyOnlineNotesWebApp\\MyOnlineNotes.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

@@ -6,3 +6,12 @@ C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotes.Core\obj\Debug\netstan
 C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotes.Core\obj\Debug\netstandard2.0\MyOnlineNotes.Core.AssemblyInfo.cs
 C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotes.Core\obj\Debug\netstandard2.0\MyOnlineNotes.Core.dll
 C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotes.Core\obj\Debug\netstandard2.0\MyOnlineNotes.Core.pdb
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.Core\bin\Debug\netstandard2.0\MyOnlineNotes.Core.deps.json
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.Core\bin\Debug\netstandard2.0\MyOnlineNotes.Core.dll
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.Core\bin\Debug\netstandard2.0\MyOnlineNotes.Core.pdb
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.Core\obj\Debug\netstandard2.0\MyOnlineNotes.Core.csprojAssemblyReference.cache
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.Core\obj\Debug\netstandard2.0\MyOnlineNotes.Core.csproj.CoreCompileInputs.cache
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.Core\obj\Debug\netstandard2.0\MyOnlineNotes.Core.AssemblyInfoInputs.cache
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.Core\obj\Debug\netstandard2.0\MyOnlineNotes.Core.AssemblyInfo.cs
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.Core\obj\Debug\netstandard2.0\MyOnlineNotes.Core.dll
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.Core\obj\Debug\netstandard2.0\MyOnlineNotes.Core.pdb

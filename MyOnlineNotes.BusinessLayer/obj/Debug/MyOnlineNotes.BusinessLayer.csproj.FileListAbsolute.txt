@@ -48,3 +48,29 @@ C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\obj\Debu
 C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\obj\Debug\MyOnlineNotes.BusinessLayer.pdb
 C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\MyOnlineNotes.Core.dll
 C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\MyOnlineNotes.Core.pdb
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\MyOnlineNotes.BusinessLayer.dll.config
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\MyOnlineNotes.BusinessLayer.dll
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\MyOnlineNotes.BusinessLayer.pdb
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\EPPlus.dll
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\MyOnlineNotes.Common.dll
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\MyOnlineNotes.Core.dll
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\MyOnlineNotes.DataAccessLayer.dll
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\MyOnlineNotesEntities.dll
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\FakeData.dll
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\MyOnlineNotes.Common.pdb
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\MyOnlineNotes.Core.pdb
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\MyOnlineNotes.DataAccessLayer.pdb
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\MyOnlineNotes.DataAccessLayer.dll.config
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\MyOnlineNotesEntities.pdb
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\MyOnlineNotesEntities.dll.config
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\EPPlus.xml
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\bin\Debug\FakeData.pdb
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\obj\Debug\MyOnlineNotes.BusinessLayer.csprojAssemblyReference.cache
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\obj\Debug\MyOnlineNotes.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\obj\Debug\MyOnlineNotes.BusinessLayer.csproj.CopyComplete
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\obj\Debug\MyOnlineNotes.BusinessLayer.dll
+C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.BusinessLayer\obj\Debug\MyOnlineNotes.BusinessLayer.pdb

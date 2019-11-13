@@ -68,7 +68,13 @@
                                 {
 
                                     <p> @(note.Text.Substring(0, 70) + "...")</p>
-                                    <p><a href="#" class="btn btn-dark btn-sm ">devamı <span class="fas fa-arrow-right"></span></a></p>
+                                    <p>
+                                        <a href="#" data-toggle="modal" 
+                                           data-target="#modal_noteDetail" data-note-id="@note.Id"
+                                           class="btn btn-dark btn-sm ">
+                                            devamı <span class="fas fa-arrow-right"></span>
+                                        </a>
+                                    </p>
                                 }
                                 else
                                 {
@@ -114,6 +120,10 @@
 
 
 @BootstrapHelper.ModalPopup(id:"modal_comment", title:"Yorumlar")
+@BootstrapHelper.ModalPopup(id:"modal_noteDetail", title:"Not Detayı")
+
+
 
 <script src="~/Comment.js"></script>
 <script src="~/like.js"></script>
+<script src="~/NoteDetailPopUp.js"></script>

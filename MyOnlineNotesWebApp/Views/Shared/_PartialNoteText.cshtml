@@ -1,0 +1,26 @@
+﻿@using MyOnlineNotesEntities
+@model Note 
+    
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h3>
+                @Model.Title
+            </h3>
+        </div>
+        <div class="col-md-12">
+            <hr />
+        </div>
+        <div class="col-md-12 text-right">
+            <span class="glyphicon glyphicon-user">@Model.Owner.Username</span><br />
+            <span class="glyphicon glyphicon-time">@Model.ModifiedOn</span><br />
+            <div class="col-md-12">
+                <hr />
+            </div>
+            <div class="col-md-12">
+                <p class="text-justify">
+                    @Model.Text
+                </p>
+            </div>
+        </div>
+    </div>
+

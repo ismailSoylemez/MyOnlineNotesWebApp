@@ -41,7 +41,7 @@ namespace MyOnlineNotesWebApp.Controllers
             
             //NoteManager nm = new NoteManager();
             
-            return View(noteManager.ListQueryable().OrderByDescending(x => x.ModifiedOn).ToList());//veriyi sqlden çektik tersten sıraladık
+            return View(noteManager.ListQueryable().Where(x=>x.IsDraft == false).OrderByDescending(x => x.ModifiedOn).ToList());//veriyi sqlden çektik tersten sıraladık
             //return View(nm.GetAllNoteQueryable().OrderByDescending(x => x.ModifiedOn).ToList());//veriyi sqlden çektik sıraladık
         }
 
@@ -54,17 +54,21 @@ namespace MyOnlineNotesWebApp.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Category cat = categoryManager.Find(x=>x.Id==id.Value);//
+            //Category cat = categoryManager.Find(x=>x.Id==id.Value);//
 
             //Category bulunamadıysa..
-            if (cat == null)
+            /*if (cat == null)
             {
                 return HttpNotFound();
                 //return RedirectToAction("Index", "Home");
-            }
+            }*/
+
+            //List<Note> notes = cat.Notes.Where(x => x.IsDraft == false).OrderByDescending(x => x.ModifiedOn).ToList();
+
+            List<Note> notes = noteManager.ListQueryable().Where(x => x.IsDraft == false && x.CategoryId == id).OrderByDescending(x => x.ModifiedOn).ToList();
 
            //bu modeli index view ına gönderdi
-            return View("Index",cat.Notes.OrderByDescending(x=>x.ModifiedOn).ToList());
+            return View("Index",notes);
         }
 
 

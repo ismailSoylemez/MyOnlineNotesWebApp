@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "HATA";
+}
+
+<style>
+    .css {
+        border-style: groove;
+        border-color: red;
+        border-collapse: separate;
+        border-radius: 10px
+    }
+</style>
+
+<div class="row justify-content-center">
+    <div class="col-md-4 css">
+
+        @{ 
+            Exception ex = null;
+            if (TempData["LastError"] != null)
+            {
+                ex = TempData["LastError"] as Exception;
+            }
+        }
+
+        <h1><span class="glyphicon glyphicon-remove-circle"></span> Hata Oluştu </h1>
+        <p>
+
+            Hata oluştu lütfen yetili ile iletişime geçiniz !
+            <br /><br />
+            @if (ex != null)
+            {
+                <strong> Hata Detay : </strong>
+                @ex.Message
+                <br /><br /> <br />
+
+
+            }
+
+
+            @BootstrapHelper.LinkButton("/Home/Index", "default", "", "", "home", " Ana Sayfaya Git!")
+            @BootstrapHelper.LinkButton("ismailsoylemez272@gmail.com", "primary", "", "", "home", "E-Posta Gönder")
+
+        </p>
+
+    </div>
+</div>
+

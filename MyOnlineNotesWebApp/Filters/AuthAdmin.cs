@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace MyOnlineNotesWebApp.Filters
 {
+
     public class AuthAdmin : FilterAttribute, IAuthorizationFilter
     {
         //Kullanıcı admin değilse

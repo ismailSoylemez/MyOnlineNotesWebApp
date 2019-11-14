@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace MyOnlineNotesWebApp.Controllers
 {
+    [Exc]
     [Auth]//Filter işlemi: kullanıcı login değilse logine yönlendir
     [AuthAdmin]
     public class CategoryController : Controller

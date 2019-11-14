@@ -17,6 +17,7 @@ using System.Web.Mvc;
 
 namespace MyOnlineNotesWebApp.Controllers
 {
+    [Exc]
     public class HomeController : Controller
     {
         private NoteManager noteManager = new NoteManager();
@@ -381,6 +382,11 @@ namespace MyOnlineNotesWebApp.Controllers
 
 
         public ActionResult AccessDenied()
+        {
+            return View();
+        }
+
+        public ActionResult HasError()
         {
             return View();
         }

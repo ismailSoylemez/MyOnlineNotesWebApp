@@ -12,6 +12,7 @@ using System.Web.Mvc;
 
 namespace MyOnlineNotesWebApp.Controllers
 {
+    [Exc]
     public class NoteController : Controller
     {
 

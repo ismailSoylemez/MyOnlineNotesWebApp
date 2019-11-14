@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace MyOnlineNotesWebApp.Controllers
 {
+    [Exc]
     [Auth]
     [AuthAdmin]
     public class UserController : Controller

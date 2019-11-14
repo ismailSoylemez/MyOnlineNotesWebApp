@@ -39,3 +39,4 @@ C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNote
 C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.Common\obj\Debug\netstandard2.0\MyOnlineNotes.Common.csproj.CopyComplete
 C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.Common\obj\Debug\netstandard2.0\MyOnlineNotes.Common.dll
 C:\Users\ismail\Desktop\ASP .NET MVC Yazılımcıların Yükselişi\MyOnlineNotesWebApp\MyOnlineNotes.Common\obj\Debug\netstandard2.0\MyOnlineNotes.Common.pdb
+C:\Users\ismail\Desktop\MyOnlineNotesWebApp\MyOnlineNotes.Common\obj\Debug\netstandard2.0\MyOnlineNotes.Common.csprojAssemblyReference.cache

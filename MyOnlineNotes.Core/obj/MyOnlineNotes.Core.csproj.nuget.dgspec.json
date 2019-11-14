@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ismail\\Desktop\\ASP .NET MVC Yazılımcıların Yükselişi\\MyOnlineNotesWebApp\\MyOnlineNotes.Core\\MyOnlineNotes.Core.csproj": {}
+    "C:\\Users\\ismail\\Desktop\\MyOnlineNotesWebApp\\MyOnlineNotes.Core\\MyOnlineNotes.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ismail\\Desktop\\ASP .NET MVC Yazılımcıların Yükselişi\\MyOnlineNotesWebApp\\MyOnlineNotes.Core\\MyOnlineNotes.Core.csproj": {
+    "C:\\Users\\ismail\\Desktop\\MyOnlineNotesWebApp\\MyOnlineNotes.Core\\MyOnlineNotes.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ismail\\Desktop\\ASP .NET MVC Yazılımcıların Yükselişi\\MyOnlineNotesWebApp\\MyOnlineNotes.Core\\MyOnlineNotes.Core.csproj",
+        "projectUniqueName": "C:\\Users\\ismail\\Desktop\\MyOnlineNotesWebApp\\MyOnlineNotes.Core\\MyOnlineNotes.Core.csproj",
         "projectName": "MyOnlineNotes.Core",
-        "projectPath": "C:\\Users\\ismail\\Desktop\\ASP .NET MVC Yazılımcıların Yükselişi\\MyOnlineNotesWebApp\\MyOnlineNotes.Core\\MyOnlineNotes.Core.csproj",
+        "projectPath": "C:\\Users\\ismail\\Desktop\\MyOnlineNotesWebApp\\MyOnlineNotes.Core\\MyOnlineNotes.Core.csproj",
         "packagesPath": "C:\\Users\\ismail\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ismail\\Desktop\\ASP .NET MVC Yazılımcıların Yükselişi\\MyOnlineNotesWebApp\\MyOnlineNotes.Core\\obj\\",
+        "outputPath": "C:\\Users\\ismail\\Desktop\\MyOnlineNotesWebApp\\MyOnlineNotes.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

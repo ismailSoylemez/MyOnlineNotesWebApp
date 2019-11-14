@@ -380,6 +380,11 @@ namespace MyOnlineNotesWebApp.Controllers
 
 
 
+        public ActionResult AccessDenied()
+        {
+            return View();
+        }
+
 
 
 

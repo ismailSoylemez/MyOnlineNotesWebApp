@@ -12,6 +12,7 @@ using System.Web.Mvc;
 namespace MyOnlineNotesWebApp.Controllers
 {
     [Auth]
+    [AuthAdmin]
     public class UserController : Controller
     {
         private MyOnlineNotesUserManager myOnlineNotesUserManager = new MyOnlineNotesUserManager();

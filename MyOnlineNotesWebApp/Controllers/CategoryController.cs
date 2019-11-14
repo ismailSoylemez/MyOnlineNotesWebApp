@@ -1,5 +1,6 @@
 ﻿using MyOnlineNotes.BusinessLayer;
 using MyOnlineNotesEntities;
+using MyOnlineNotesWebApp.Filters;
 using MyOnlineNotesWebApp.Models;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Web.Mvc;
 
 namespace MyOnlineNotesWebApp.Controllers
 {
+    [Auth]//Filter işlemi: kullanıcı login değilse logine yönlendir
     public class CategoryController : Controller
     {
 

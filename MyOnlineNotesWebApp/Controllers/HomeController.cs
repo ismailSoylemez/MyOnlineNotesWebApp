@@ -4,6 +4,7 @@ using MyOnlineNotes.DataAccessLayer.EntityFramework;
 using MyOnlineNotesEntities;
 using MyOnlineNotesEntities.Messages;
 using MyOnlineNotesEntities.ValueObject;
+using MyOnlineNotesWebApp.Filters;
 using MyOnlineNotesWebApp.Models;
 using MyOnlineNotesWebApp.ViewModels;
 using System;
@@ -83,7 +84,7 @@ namespace MyOnlineNotesWebApp.Controllers
         }
 
 
-
+        [Auth]
         public ActionResult ShowProfile()
         {
             //artık buna gerek yok çünkü CurrentUser classında tutuyoruz bu bilgiyi
@@ -106,6 +107,7 @@ namespace MyOnlineNotesWebApp.Controllers
             return View(res.Result);
         }
 
+        [Auth]
         public ActionResult EditProfile()
         {
             //OnlineNoteUser currentUser = Session["login"] as OnlineNoteUser;
@@ -128,6 +130,7 @@ namespace MyOnlineNotesWebApp.Controllers
             return View(res.Result);
         }
 
+        [Auth]
         [HttpPost]
         public ActionResult EditProfile(OnlineNoteUser model, HttpPostedFileBase ProfileImage)
         {
@@ -200,9 +203,7 @@ namespace MyOnlineNotesWebApp.Controllers
 
         }
 
-
-
-
+        [Auth] 
         public ActionResult DeleteProfile()
         {
             //OnlineNoteUser currentUser = Session["login"] as OnlineNoteUser;

@@ -1,5 +1,6 @@
 ﻿using MyOnlineNotes.BusinessLayer;
 using MyOnlineNotesEntities;
+using MyOnlineNotesWebApp.Filters;
 using MyOnlineNotesWebApp.Models;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace MyOnlineNotesWebApp.Controllers
         CategoryManager categoryManager = new CategoryManager();
         LikedManager likedManager = new LikedManager();
 
+        [Auth]
         public ActionResult Index()
         {
             //buraya giren kişi kendi notlarını görecek
@@ -31,6 +33,7 @@ namespace MyOnlineNotesWebApp.Controllers
             return View(notes.ToList());
         }
 
+        [Auth]
         public ActionResult MyLikedNotes()
         {
             //Linq sorgusu
@@ -45,7 +48,7 @@ namespace MyOnlineNotesWebApp.Controllers
             return View("Index", notes.ToList());
         }
 
-
+        [Auth]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -63,12 +66,14 @@ namespace MyOnlineNotesWebApp.Controllers
             return View(note);
         }
 
+        [Auth]
         public ActionResult Create()
         {
             ViewBag.CategoryId = new SelectList(categoryManager.List(), "Id", "Title");
             return View();
         }
 
+        [Auth]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Note note)
@@ -90,6 +95,7 @@ namespace MyOnlineNotesWebApp.Controllers
 
         }
 
+        [Auth]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -108,6 +114,7 @@ namespace MyOnlineNotesWebApp.Controllers
             return View(note);
         }
 
+        [Auth]
         [HttpPost]
         public ActionResult Edit(Note note)
         {
@@ -132,6 +139,7 @@ namespace MyOnlineNotesWebApp.Controllers
             return View(note);
         }
 
+        [Auth]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -147,6 +155,7 @@ namespace MyOnlineNotesWebApp.Controllers
             return View(note);
         }
 
+        [Auth]
         [HttpPost]
         public ActionResult Delete(int id)
         {

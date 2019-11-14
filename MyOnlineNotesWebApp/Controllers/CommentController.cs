@@ -1,5 +1,6 @@
 ﻿using MyOnlineNotes.BusinessLayer;
 using MyOnlineNotesEntities;
+using MyOnlineNotesWebApp.Filters;
 using MyOnlineNotesWebApp.Models;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,6 @@ namespace MyOnlineNotesWebApp.Controllers
         private CommentManager commentManager = new CommentManager();
 
 
-        // GET: Comment
         public ActionResult ShowNoteComments(int? id)
         {
             if (id == null)
@@ -42,7 +42,7 @@ namespace MyOnlineNotesWebApp.Controllers
             return PartialView("_PartialComments", note.Comments);
         }
 
-
+        [Auth]
         [HttpPost]
         public ActionResult Edit(int? id, string text)
         {
@@ -72,7 +72,7 @@ namespace MyOnlineNotesWebApp.Controllers
         }
 
 
-
+        [Auth]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -97,7 +97,7 @@ namespace MyOnlineNotesWebApp.Controllers
 
         }
 
-
+        [Auth]
         [HttpPost]
         public ActionResult Create (int? noteid, Comment comment)
         {

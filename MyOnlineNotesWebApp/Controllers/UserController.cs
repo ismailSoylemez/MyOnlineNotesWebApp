@@ -1,6 +1,7 @@
 ﻿using MyOnlineNotes.BusinessLayer;
 using MyOnlineNotes.BusinessLayer.Results;
 using MyOnlineNotesEntities;
+using MyOnlineNotesWebApp.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ using System.Web.Mvc;
 
 namespace MyOnlineNotesWebApp.Controllers
 {
+    [Auth]
     public class UserController : Controller
     {
         private MyOnlineNotesUserManager myOnlineNotesUserManager = new MyOnlineNotesUserManager();
